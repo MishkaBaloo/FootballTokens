@@ -11,7 +11,10 @@ import SwiftUI
 struct FootballTokensApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            Overview()
+//            Favorite()
+            Settings()
+//            ContentView()
         }
     }
 }

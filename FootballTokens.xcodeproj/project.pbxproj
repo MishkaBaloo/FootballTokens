@@ -12,6 +12,12 @@
 		CE5D8F6B2CEB6D0600BAE16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5D8F6A2CEB6D0600BAE16B /* Assets.xcassets */; };
 		CE5D8F6E2CEB6D0600BAE16B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5D8F6D2CEB6D0600BAE16B /* Preview Assets.xcassets */; };
 		CE5D8F762CEB735400BAE16B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F752CEB735400BAE16B /* Color.swift */; };
+		CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */; };
+		CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */; };
+		CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F902CEBA6E800BAE16B /* Favorite.swift */; };
+		CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955902CEBB23B003B6C09 /* Settings.swift */; };
+		CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955962CEBC03F003B6C09 /* AppConfig.swift */; };
+		CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955982CEBCC4F003B6C09 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,12 @@
 		CE5D8F6A2CEB6D0600BAE16B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5D8F6D2CEB6D0600BAE16B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE5D8F752CEB735400BAE16B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
+		CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
+		CE5D8F902CEBA6E800BAE16B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		CEC955902CEBB23B003B6C09 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CEC955962CEBC03F003B6C09 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		CEC955982CEBCC4F003B6C09 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +67,12 @@
 			children = (
 				CE5D8F662CEB6D0500BAE16B /* FootballTokensApp.swift */,
 				CE5D8F682CEB6D0500BAE16B /* ContentView.swift */,
+				CE5D8F7A2CEB988B00BAE16B /* Helpers */,
+				CE5D8F792CEB988400BAE16B /* Services */,
+				CE5D8F782CEB987E00BAE16B /* Models */,
+				CE5D8F772CEB986500BAE16B /* Core */,
 				CE5D8F742CEB734800BAE16B /* Extensions */,
-				CE5D8F6A2CEB6D0600BAE16B /* Assets.xcassets */,
+				CE5D8F7B2CEB990E00BAE16B /* Resources */,
 				CE5D8F6C2CEB6D0600BAE16B /* Preview Content */,
 			);
 			path = FootballTokens;
@@ -76,6 +92,176 @@
 				CE5D8F752CEB735400BAE16B /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE5D8F772CEB986500BAE16B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F832CEB99F400BAE16B /* Detail */,
+				CE5D8F822CEB99EA00BAE16B /* Setting */,
+				CE5D8F812CEB99DA00BAE16B /* Calculator */,
+				CE5D8F802CEB996700BAE16B /* Home */,
+				CE5D8F7F2CEB996100BAE16B /* TabBar */,
+				CE5D8F7E2CEB994D00BAE16B /* Launch */,
+				CE5D8F7D2CEB992D00BAE16B /* Components */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CE5D8F782CEB987E00BAE16B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE5D8F792CEB988400BAE16B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE5D8F7A2CEB988B00BAE16B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE5D8F7B2CEB990E00BAE16B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F7C2CEB991D00BAE16B /* Font */,
+				CE5D8F6A2CEB6D0600BAE16B /* Assets.xcassets */,
+				CEC955962CEBC03F003B6C09 /* AppConfig.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE5D8F7C2CEB991D00BAE16B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		CE5D8F7D2CEB992D00BAE16B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE5D8F7E2CEB994D00BAE16B /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		CE5D8F7F2CEB996100BAE16B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F872CEB9A7400BAE16B /* ViewModels */,
+				CE5D8F862CEB9A6E00BAE16B /* Views */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CE5D8F802CEB996700BAE16B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F852CEB9A3000BAE16B /* ViewModels */,
+				CE5D8F842CEB9A2800BAE16B /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE5D8F812CEB99DA00BAE16B /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F8B2CEB9B9600BAE16B /* ViewModels */,
+				CE5D8F8A2CEB9B8E00BAE16B /* Views */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		CE5D8F822CEB99EA00BAE16B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CEC955902CEBB23B003B6C09 /* Settings.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CE5D8F832CEB99F400BAE16B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F892CEB9B4E00BAE16B /* ViewModels */,
+				CE5D8F882CEB9B4B00BAE16B /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CE5D8F842CEB9A2800BAE16B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */,
+				CE5D8F902CEBA6E800BAE16B /* Favorite.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5D8F852CEB9A3000BAE16B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE5D8F862CEB9A6E00BAE16B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5D8F872CEB9A7400BAE16B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE5D8F882CEB9B4B00BAE16B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5D8F892CEB9B4E00BAE16B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE5D8F8A2CEB9B8E00BAE16B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEC955982CEBCC4F003B6C09 /* Calculator.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE5D8F8B2CEB9B9600BAE16B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */,
+				CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */,
+				CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */,
+				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
+				CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */,
+				CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */,
 				CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */,
 				CE5D8F762CEB735400BAE16B /* Color.swift in Sources */,
 			);

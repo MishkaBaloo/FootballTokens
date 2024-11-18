@@ -66,8 +66,8 @@ struct StrokeColor {
 
 struct ButtonsColor {
     
-    let pressed = Color("Pressed")
-    let disabled = Color("Disabled")
+    let pressed = Color("PressedButton")
+    let disabled = Color("DisabledButton")
     
 }
 
