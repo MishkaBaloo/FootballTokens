@@ -21,7 +21,8 @@ struct SquareButton: View {
                 
                 image
                     .resizable()
-                    .frame(width: 25, height: 25)
+                    .scaledToFit()
+                    .frame(width: 24, height: 24)
             }
         })
     }

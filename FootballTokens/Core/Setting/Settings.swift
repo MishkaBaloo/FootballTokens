@@ -10,7 +10,9 @@ import StoreKit
 
 struct Settings: View {
     
+    @EnvironmentObject var tabBarViewModel: TabBarViewModel
     @State private var showAlert: Bool = false
+
     
     var body: some View {
         ZStack {
@@ -53,7 +55,7 @@ struct Settings: View {
                     // clearData button
                     Spacer()
                     clearData
-                    Spacer()
+                    Spacer(minLength: 100)
                 }
             }
         }
@@ -62,6 +64,7 @@ struct Settings: View {
 
 #Preview {
     Settings()
+        .environmentObject(TabBarViewModel())
 }
 
 //MARK: Extensions
@@ -71,7 +74,8 @@ extension Settings {
     private var privacyPolicy: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 360, height: 70)
+                .frame(height: 70)
+                .frame(maxWidth: .infinity)
                 .foregroundStyle(Color.layersColor.layerTwo)
                 .overlay {
                     HStack {
@@ -91,12 +95,14 @@ extension Settings {
                     .padding(.horizontal)
                 }
         }
+        .padding(.horizontal)
     }
     
     private var terms: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 361, height: 70)
+                .frame(height: 70)
+                .frame(maxWidth: .infinity)
                 .foregroundStyle(Color.layersColor.layerTwo)
                 .overlay {
                     HStack {
@@ -116,12 +122,14 @@ extension Settings {
                     .padding(.horizontal)
                 }
         }
+        .padding(.horizontal)
     }
     
     private var share: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 361, height: 70)
+                .frame(height: 70)
+                .frame(maxWidth: .infinity)
                 .foregroundStyle(Color.layersColor.layerTwo)
                 .overlay {
                     HStack {
@@ -137,12 +145,14 @@ extension Settings {
                     .padding(.horizontal)
                 }
         }
+        .padding(.horizontal)
     }
     
     private var rate: some View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: 360, height: 70)
+                .frame(height: 70)
+                .frame(maxWidth: .infinity)
                 .foregroundStyle(Color.layersColor.layerTwo)
                 .overlay {
                     HStack {
@@ -160,6 +170,7 @@ extension Settings {
                     .padding(.horizontal)
                 }
         }
+        .padding(.horizontal)
     }
     
     private var clearData: some View {
@@ -168,7 +179,9 @@ extension Settings {
         }, label: {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.supportColor.error, lineWidth: 1)
-                .frame(width: 360, height: 45)
+                .frame(height: 45)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
                 .foregroundStyle(Color.layersColor.layerTwo)
                 .overlay {
                     Text("Clear Data")
@@ -182,12 +195,12 @@ extension Settings {
                     .foregroundStyle(Color.red)
             }
             Button(role: .destructive, action: {
-                
+                tabBarViewModel.changeTab(tab: .overview)
             }) {
                 Text("Clear")
             }
         }, message: {
-            Text("Are you sure yu want to clear all your data? This action will premanently delete all your changes.")
+            Text("Are you sure you want to clear all your data? This action will premanently delete all your changes.")
         })
     }
 }

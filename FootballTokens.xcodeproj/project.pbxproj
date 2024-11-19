@@ -18,6 +18,11 @@
 		CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955902CEBB23B003B6C09 /* Settings.swift */; };
 		CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955962CEBC03F003B6C09 /* AppConfig.swift */; };
 		CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955982CEBCC4F003B6C09 /* Calculator.swift */; };
+		CEC9559B2CEBCFB3003B6C09 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9559A2CEBCFB3003B6C09 /* TabBarItems.swift */; };
+		CEC9559D2CEBD162003B6C09 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9559C2CEBD162003B6C09 /* TabBarViewModel.swift */; };
+		CEC9559F2CEBD216003B6C09 /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9559E2CEBD216003B6C09 /* TabBarContainerView.swift */; };
+		CEC955A12CEBD435003B6C09 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955A02CEBD435003B6C09 /* TabBarView.swift */; };
+		CEC955A32CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955A22CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		CEC955902CEBB23B003B6C09 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CEC955962CEBC03F003B6C09 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		CEC955982CEBCC4F003B6C09 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		CEC9559A2CEBCFB3003B6C09 /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
+		CEC9559C2CEBD162003B6C09 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		CEC9559E2CEBD216003B6C09 /* TabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContainerView.swift; sourceTree = "<group>"; };
+		CEC955A02CEBD435003B6C09 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		CEC955A22CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +234,8 @@
 		CE5D8F862CEB9A6E00BAE16B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEC9559E2CEBD216003B6C09 /* TabBarContainerView.swift */,
+				CEC955A02CEBD435003B6C09 /* TabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +243,9 @@
 		CE5D8F872CEB9A7400BAE16B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CEC9559A2CEBCFB3003B6C09 /* TabBarItems.swift */,
+				CEC9559C2CEBD162003B6C09 /* TabBarViewModel.swift */,
+				CEC955A22CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -336,12 +351,17 @@
 			files = (
 				CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */,
 				CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */,
+				CEC955A12CEBD435003B6C09 /* TabBarView.swift in Sources */,
+				CEC9559B2CEBCFB3003B6C09 /* TabBarItems.swift in Sources */,
 				CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */,
 				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
+				CEC955A32CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift in Sources */,
+				CEC9559F2CEBD216003B6C09 /* TabBarContainerView.swift in Sources */,
 				CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */,
 				CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */,
 				CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */,
+				CEC9559D2CEBD162003B6C09 /* TabBarViewModel.swift in Sources */,
 				CE5D8F762CEB735400BAE16B /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

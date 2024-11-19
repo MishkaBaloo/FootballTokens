@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var tabBarViewModel: TabBarViewModel = TabBarViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-                .font(.title)
-                .fontWeight(.bold)
-                
+        
+        TabBarContainerView(selection: $tabBarViewModel.selectedTab) {
+            Overview()
+                .tabBarItem(tab: .overview, selection: $tabBarViewModel.selectedTab)
+            Calculator()
+                .tabBarItem(tab: .calculator, selection: $tabBarViewModel.selectedTab)
+            Settings()
+                .tabBarItem(tab: .settings, selection: $tabBarViewModel.selectedTab)
         }
-        .foregroundStyle(Color.supportColor.success)
-        .padding()
+        .preferredColorScheme(.dark)
+        .environmentObject(tabBarViewModel)
     }
 }
 
 #Preview {
     ContentView()
-        .preferredColorScheme(.dark)
 }

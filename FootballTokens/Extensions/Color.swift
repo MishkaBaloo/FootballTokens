@@ -12,7 +12,7 @@ extension Color {
     
     static let backgroundColor = BackgroundColor()
     static let layersColor = LayersColor()
-    static let accentColor = AccentColor()
+    static let accentsColor = AccentColor()
     static let textColor = TextColor()
     static let iconColor = IconColor()
     static let strokeColor = StrokeColor()
@@ -39,7 +39,7 @@ struct LayersColor {
 
 struct AccentColor {
     
-    let accent = Color("AccentColor")
+    let accent = Color("AccentSystemColor")
     
 }
 
