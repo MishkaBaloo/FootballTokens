@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0C74552CEE1CD1003DC82F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C74542CEE1CD1003DC82F /* HomeViewModel.swift */; };
+		CE0C745B2CEE4258003DC82F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C745A2CEE4258003DC82F /* Enums.swift */; };
+		CE0C745F2CEE42FA003DC82F /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C745E2CEE42FA003DC82F /* CoinImageView.swift */; };
 		CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F662CEB6D0500BAE16B /* FootballTokensApp.swift */; };
 		CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F682CEB6D0500BAE16B /* ContentView.swift */; };
 		CE5D8F6B2CEB6D0600BAE16B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5D8F6A2CEB6D0600BAE16B /* Assets.xcassets */; };
@@ -15,6 +18,11 @@
 		CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */; };
 		CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */; };
 		CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F902CEBA6E800BAE16B /* Favorite.swift */; };
+		CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC757E2CECC50A003915FC /* CoinModel.swift */; };
+		CEBC75812CECC921003915FC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC75802CECC921003915FC /* NetworkingManager.swift */; };
+		CEBC75832CECCE23003915FC /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC75822CECCE23003915FC /* CoinDataService.swift */; };
+		CEBC75852CECD094003915FC /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC75842CECD094003915FC /* CoinRowView.swift */; };
+		CEBC758B2CECD6CC003915FC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC758A2CECD6CC003915FC /* String.swift */; };
 		CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955902CEBB23B003B6C09 /* Settings.swift */; };
 		CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955962CEBC03F003B6C09 /* AppConfig.swift */; };
 		CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955982CEBCC4F003B6C09 /* Calculator.swift */; };
@@ -26,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0C74542CEE1CD1003DC82F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE0C745A2CEE4258003DC82F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		CE0C745E2CEE42FA003DC82F /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		CE5D8F632CEB6D0500BAE16B /* FootballTokens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballTokens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5D8F662CEB6D0500BAE16B /* FootballTokensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballTokensApp.swift; sourceTree = "<group>"; };
 		CE5D8F682CEB6D0500BAE16B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +46,11 @@
 		CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
 		CE5D8F902CEBA6E800BAE16B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		CEBC757E2CECC50A003915FC /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		CEBC75802CECC921003915FC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		CEBC75822CECCE23003915FC /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		CEBC75842CECD094003915FC /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
+		CEBC758A2CECD6CC003915FC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CEC955902CEBB23B003B6C09 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CEC955962CEBC03F003B6C09 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		CEC955982CEBCC4F003B6C09 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -100,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D8F752CEB735400BAE16B /* Color.swift */,
+				CE0C745A2CEE4258003DC82F /* Enums.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -121,6 +138,7 @@
 		CE5D8F782CEB987E00BAE16B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC757E2CECC50A003915FC /* CoinModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +146,7 @@
 		CE5D8F792CEB988400BAE16B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC75822CECCE23003915FC /* CoinDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,6 +154,8 @@
 		CE5D8F7A2CEB988B00BAE16B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CEBC75802CECC921003915FC /* NetworkingManager.swift */,
+				CEBC758A2CECD6CC003915FC /* String.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -220,6 +241,8 @@
 			children = (
 				CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */,
 				CE5D8F902CEBA6E800BAE16B /* Favorite.swift */,
+				CEBC75842CECD094003915FC /* CoinRowView.swift */,
+				CE0C745E2CEE42FA003DC82F /* CoinImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +250,7 @@
 		CE5D8F852CEB9A3000BAE16B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C74542CEE1CD1003DC82F /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -349,16 +373,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBC75852CECD094003915FC /* CoinRowView.swift in Sources */,
 				CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */,
+				CEBC758B2CECD6CC003915FC /* String.swift in Sources */,
+				CE0C74552CEE1CD1003DC82F /* HomeViewModel.swift in Sources */,
+				CE0C745B2CEE4258003DC82F /* Enums.swift in Sources */,
 				CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */,
 				CEC955A12CEBD435003B6C09 /* TabBarView.swift in Sources */,
 				CEC9559B2CEBCFB3003B6C09 /* TabBarItems.swift in Sources */,
 				CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */,
+				CEBC75812CECC921003915FC /* NetworkingManager.swift in Sources */,
 				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
 				CEC955A32CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift in Sources */,
+				CEBC75832CECCE23003915FC /* CoinDataService.swift in Sources */,
 				CEC9559F2CEBD216003B6C09 /* TabBarContainerView.swift in Sources */,
+				CE0C745F2CEE42FA003DC82F /* CoinImageView.swift in Sources */,
 				CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */,
+				CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */,
 				CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */,
 				CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */,
 				CEC9559D2CEBD162003B6C09 /* TabBarViewModel.swift in Sources */,

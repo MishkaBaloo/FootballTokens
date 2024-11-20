@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Overview: View {
     
+    @EnvironmentObject private var vm: HomeViewModel
+
     @State private var showFavoriteView: Bool = false
+    @State private var sortButtonPress: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -23,7 +26,6 @@ struct Overview: View {
                     header
                     bestPerforming
                     coinsList
-                    Spacer()
                 }
             }
             .navigationDestination(isPresented: $showFavoriteView) {
@@ -36,6 +38,7 @@ struct Overview: View {
 
 #Preview {
     Overview()
+        .environmentObject(HomeViewModel())
 }
 
 // MARK: Extensions
@@ -70,16 +73,28 @@ extension Overview {
     }
     
     private var coinsList: some View {
-        
+     
         VStack {
             HStack {
-                Text("Overview for ...")
+                Text("Overview for")
+                Text("Picker")
+                
+                Spacer()
+                
+                    SquareButton(image: Image(.filter)) {
+                        withAnimation(.spring) {
+                        sortButtonPress.toggle()
+                        }
+                    }
+                    .rotationEffect(Angle(degrees: sortButtonPress ? 180 : 0))
             }
-            
+            .foregroundStyle(Color.textColor.primary)
             .padding()
             
-            HStack {
-                Text("Coins liast example")
+            ScrollView {
+                ForEach(vm.allCoins) { coin in
+                    CoinRowView(coin: coin)
+                }
             }
         }
     }

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct FootballTokensApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .environmentObject(HomeViewModel())
     }
 }
