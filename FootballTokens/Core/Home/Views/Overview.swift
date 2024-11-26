@@ -10,21 +10,24 @@ import SwiftUI
 struct Overview: View {
     
     @EnvironmentObject private var vm: HomeViewModel
-
+    
     @State private var showFavoriteView: Bool = false
     @State private var sortButtonPress: Bool = false
+    @State private var selectionTime: TimePeriods = .day // default value for dateTime
+    @State private var selectionFilter: Sorting = .marketCup // defualt value for sorting
     
     var body: some View {
         NavigationStack {
             
-            // background layer
+            // Background layer
             ZStack {
                 Color.backgroundColor.background.ignoresSafeArea()
                 
-                // content layer
+                // Content layer
                 VStack {
                     header
                     bestPerforming
+                    sorting
                     coinsList
                 }
             }
@@ -38,6 +41,7 @@ struct Overview: View {
 
 #Preview {
     Overview()
+        .preferredColorScheme(.dark)
         .environmentObject(HomeViewModel())
 }
 
@@ -65,39 +69,42 @@ extension Overview {
     }
     
     private var bestPerforming: some View {
-        HStack {
-            Text("Chart example")
-                .foregroundStyle(Color.textColor.primary)
-                .padding()
+        VStack {
+            if let coin = vm.bestPerformingCoin {
+                BestPerformingView(coin: coin)
+                    .onTapGesture {
+                        // detail of best perfomance
+                    }
+            }
+            
+            if let chart = vm.bestPerformingCoin {
+                CustomChartView(coin: chart)
+            }
         }
     }
     
-    private var coinsList: some View {
-     
-        VStack {
-            HStack {
-                Text("Overview for")
-                Text("Picker")
-                
-                Spacer()
-                
-                    SquareButton(image: Image(.filter)) {
-                        withAnimation(.spring) {
-                        sortButtonPress.toggle()
-                        }
-                    }
-                    .rotationEffect(Angle(degrees: sortButtonPress ? 180 : 0))
-            }
-            .foregroundStyle(Color.textColor.primary)
-            .padding()
+    private var sorting: some View {
+        HStack {
+            Text("Overview for")
+                .foregroundStyle(Color.textColor.primary)
+                .font(.system(size: 20, weight: .bold))
             
+            CustomPickerByTimePeriod(defaultSelection: .day, selection: $selectionTime)
+            Spacer()
+            CustomPickerByFilter(defaultSelection: .marketCup, selection: $selectionFilter)
+            .padding(.horizontal, 4)
+        }
+        .padding()
+        .zIndex(1.0)
+    }
+    
+    private var coinsList: some View {
             ScrollView {
                 ForEach(vm.allCoins) { coin in
                     CoinRowView(coin: coin)
                 }
+                Spacer(minLength: 100)
             }
-        }
+            .scrollIndicators(.hidden)
     }
-    
-    
 }

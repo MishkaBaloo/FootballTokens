@@ -29,12 +29,21 @@ enum TimePeriods: String, CaseIterable {
 enum Sorting: String, CaseIterable {
     
     case marketCup
+    case tradingVolume
     case price
+    case priceReversed
+    case changeReversed
+    case change
     
     var keyword: String {
         switch self {
         case .marketCup: "marketCap"
-        case .price: "price"
+        case .tradingVolume: "trading Volume"
+        case .price: "Highest price"
+        case .priceReversed: "Lowest price"
+        case .changeReversed: "Worst performing"
+        case .change: "Best Performing"
+        
         }
     }
 }

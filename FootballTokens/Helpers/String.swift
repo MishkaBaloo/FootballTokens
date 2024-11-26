@@ -15,16 +15,37 @@ extension String {
     func formatCurrency() -> String {
         guard let value = Double(self) else { return "$0.00" } //Convert to Double
         let formatter = NumberFormatter()
-//        formatter.numberStyle = .currency // UAH
-//        formatter.currencySymbol = "$" // $ after price
+        //        formatter.numberStyle = .currency // UAH
+        //        formatter.currencySymbol = "$" // $ after price
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         formatter.locale = Locale(identifier: "en_US") // replace coma with dot
         return formatter.string(from: NSNumber(value: value)) ?? "0.00"
     }
     
+    func formatToMillions() -> String {
+        guard let value = Double(self) else { return "0.00" }
+        
+        let millionValue = value / 1_000_000
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.numberStyle = .decimal
+        
+        if let formattedString = formatter.string(from: NSNumber(value: millionValue)) {
+            return formattedString
+        } else {
+            return "0.00"
+        }
+    }
+    
     func asMoneySignString() -> String {
         return "$" + formatCurrency()
+    }
+    
+    func asMilMoneySignString() -> String {
+        return "$ " + formatToMillions() + " m"
     }
 }
 

@@ -31,6 +31,14 @@
 		CEC9559F2CEBD216003B6C09 /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9559E2CEBD216003B6C09 /* TabBarContainerView.swift */; };
 		CEC955A12CEBD435003B6C09 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955A02CEBD435003B6C09 /* TabBarView.swift */; };
 		CEC955A32CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC955A22CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift */; };
+		CECC8E762CF0DF8F00CF5F1A /* BestPerformingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E752CF0DF8F00CF5F1A /* BestPerformingView.swift */; };
+		CECC8E782CF1028400CF5F1A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E772CF1028400CF5F1A /* Double.swift */; };
+		CECC8E7A2CF10D9800CF5F1A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E792CF10D9800CF5F1A /* Date.swift */; };
+		CECC8E7C2CF111BE00CF5F1A /* CustomChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E7B2CF111BE00CF5F1A /* CustomChartView.swift */; };
+		CEDE89F12CF517FC00C6BD2B /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDE89F02CF517FC00C6BD2B /* Secrets.plist */; };
+		CEDE89F32CF5197500C6BD2B /* APIKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE89F22CF5197500C6BD2B /* APIKeyProvider.swift */; };
+		CEF6C1142CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6C1132CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift */; };
+		CEF6C1162CEFA2C7009EBA9C /* CustomPickerByFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6C1152CEFA2C7009EBA9C /* CustomPickerByFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +67,15 @@
 		CEC9559E2CEBD216003B6C09 /* TabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContainerView.swift; sourceTree = "<group>"; };
 		CEC955A02CEBD435003B6C09 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		CEC955A22CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemPreferenceKey.swift; sourceTree = "<group>"; };
+		CECC8E752CF0DF8F00CF5F1A /* BestPerformingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPerformingView.swift; sourceTree = "<group>"; };
+		CECC8E772CF1028400CF5F1A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		CECC8E792CF10D9800CF5F1A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CECC8E7B2CF111BE00CF5F1A /* CustomChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChartView.swift; sourceTree = "<group>"; };
+		CEDE89EF2CF5173F00C6BD2B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CEDE89F02CF517FC00C6BD2B /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		CEDE89F22CF5197500C6BD2B /* APIKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyProvider.swift; sourceTree = "<group>"; };
+		CEF6C1132CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerByTimePeriod.swift; sourceTree = "<group>"; };
+		CEF6C1152CEFA2C7009EBA9C /* CustomPickerByFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerByFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +92,8 @@
 		CE5D8F5A2CEB6D0500BAE16B = {
 			isa = PBXGroup;
 			children = (
+				CEDE89F02CF517FC00C6BD2B /* Secrets.plist */,
+				CEDE89EF2CF5173F00C6BD2B /* .gitignore */,
 				CE5D8F652CEB6D0500BAE16B /* FootballTokens */,
 				CE5D8F642CEB6D0500BAE16B /* Products */,
 			);
@@ -156,6 +175,9 @@
 			children = (
 				CEBC75802CECC921003915FC /* NetworkingManager.swift */,
 				CEBC758A2CECD6CC003915FC /* String.swift */,
+				CECC8E772CF1028400CF5F1A /* Double.swift */,
+				CECC8E792CF10D9800CF5F1A /* Date.swift */,
+				CEDE89F22CF5197500C6BD2B /* APIKeyProvider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -181,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */,
+				CE797EDF2CEE84760063A409 /* CustomPicker */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -242,7 +265,9 @@
 				CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */,
 				CE5D8F902CEBA6E800BAE16B /* Favorite.swift */,
 				CEBC75842CECD094003915FC /* CoinRowView.swift */,
+				CECC8E752CF0DF8F00CF5F1A /* BestPerformingView.swift */,
 				CE0C745E2CEE42FA003DC82F /* CoinImageView.swift */,
+				CECC8E7B2CF111BE00CF5F1A /* CustomChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +326,15 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE797EDF2CEE84760063A409 /* CustomPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6C1132CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift */,
+				CEF6C1152CEFA2C7009EBA9C /* CustomPickerByFilter.swift */,
+			);
+			path = CustomPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5D8F6E2CEB6D0600BAE16B /* Preview Assets.xcassets in Resources */,
+				CEDE89F12CF517FC00C6BD2B /* Secrets.plist in Resources */,
 				CE5D8F6B2CEB6D0600BAE16B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,18 +415,25 @@
 				CE0C745B2CEE4258003DC82F /* Enums.swift in Sources */,
 				CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */,
 				CEC955A12CEBD435003B6C09 /* TabBarView.swift in Sources */,
+				CECC8E782CF1028400CF5F1A /* Double.swift in Sources */,
+				CEF6C1142CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift in Sources */,
 				CEC9559B2CEBCFB3003B6C09 /* TabBarItems.swift in Sources */,
 				CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */,
+				CEDE89F32CF5197500C6BD2B /* APIKeyProvider.swift in Sources */,
 				CEBC75812CECC921003915FC /* NetworkingManager.swift in Sources */,
 				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
 				CEC955A32CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift in Sources */,
 				CEBC75832CECCE23003915FC /* CoinDataService.swift in Sources */,
+				CEF6C1162CEFA2C7009EBA9C /* CustomPickerByFilter.swift in Sources */,
 				CEC9559F2CEBD216003B6C09 /* TabBarContainerView.swift in Sources */,
 				CE0C745F2CEE42FA003DC82F /* CoinImageView.swift in Sources */,
+				CECC8E762CF0DF8F00CF5F1A /* BestPerformingView.swift in Sources */,
 				CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */,
 				CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */,
+				CECC8E7A2CF10D9800CF5F1A /* Date.swift in Sources */,
 				CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */,
+				CECC8E7C2CF111BE00CF5F1A /* CustomChartView.swift in Sources */,
 				CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */,
 				CEC9559D2CEBD162003B6C09 /* TabBarViewModel.swift in Sources */,
 				CE5D8F762CEB735400BAE16B /* Color.swift in Sources */,

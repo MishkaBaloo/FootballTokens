@@ -24,6 +24,10 @@ class NetworkingManager {
     }
     
     static func download(url: URL) -> AnyPublisher<Data,Error> {
+        
+        var request = URLRequest(url: url)
+        request.addValue(APIKeyProvider.coinRankingAPIKey, forHTTPHeaderField: "x-access-token")
+        
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap({ try handleURLResponse(output: $0, url: url)})
             .retry(3)
@@ -38,7 +42,7 @@ class NetworkingManager {
         return output.data
     }
     
-    static func handleComplition(completion: Subscribers.Completion<any Publishers.Decode<AnyPublisher<Data, any Error>, [CoinModel], JSONDecoder>.Failure>) {
+    static func handleComplition(completion: Subscribers.Completion<any Publishers.Decode<AnyPublisher<Data, any Error>, [Welcome], JSONDecoder>.Failure>) {
         switch completion {
         case .finished:
             break
