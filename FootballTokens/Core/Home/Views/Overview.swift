@@ -13,6 +13,7 @@ struct Overview: View {
     
     @State private var showFavoriteView: Bool = false
     @State private var sortButtonPress: Bool = false
+    
     @State private var selectionTime: TimePeriods = .day // default value for dateTime
     @State private var selectionFilter: Sorting = .marketCup // defualt value for sorting
     
@@ -31,6 +32,13 @@ struct Overview: View {
                     coinsList
                 }
             }
+            .onChange(of: selectionFilter, { oldValue, newValue in
+                vm.sortCoins(sort: newValue, coins: &vm.allCoins)
+            })
+            .onChange(of: selectionTime, { oldValue, newValue in
+                vm.updateCoins(for: newValue)
+            })
+            
             .navigationDestination(isPresented: $showFavoriteView) {
                 Favorite()
             }
@@ -69,17 +77,17 @@ extension Overview {
     }
     
     private var bestPerforming: some View {
-        VStack {
+        VStack(spacing: 0) {
             if let coin = vm.bestPerformingCoin {
                 BestPerformingView(coin: coin)
                     .onTapGesture {
                         // detail of best perfomance
                     }
-            }
             
             if let chart = vm.bestPerformingCoin {
                 CustomChartView(coin: chart)
             }
+        }
         }
     }
     

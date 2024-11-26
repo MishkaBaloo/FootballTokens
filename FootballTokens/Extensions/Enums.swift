@@ -37,13 +37,12 @@ enum Sorting: String, CaseIterable {
     
     var keyword: String {
         switch self {
-        case .marketCup: "marketCap"
-        case .tradingVolume: "trading Volume"
+        case .marketCup: "Market Cap"
+        case .tradingVolume: "Trading Volume"
         case .price: "Highest price"
         case .priceReversed: "Lowest price"
         case .changeReversed: "Worst performing"
         case .change: "Best Performing"
-        
         }
     }
 }

@@ -20,16 +20,16 @@ struct BestPerformingView: View {
                     
                     HStack {
                         VStack(spacing: 0) {
-                            Text(coin.name)
+                            Text(coin.symbol)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundStyle(Color.textColor.primary)
                                 .font(.system(size: 20, weight: .bold))
-                                .frame(width: 180, height: 50)
                             Text("Market cap \(coin.marketCap.asMilMoneySignString())")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .font(.system(size: 16, weight: .thin))
                                 .foregroundStyle(Color.textColor.secondary)
                         }
+                        .frame(width: 180, height: 50)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         VStack(spacing: 0) {

@@ -15,8 +15,6 @@ extension String {
     func formatCurrency() -> String {
         guard let value = Double(self) else { return "$0.00" } //Convert to Double
         let formatter = NumberFormatter()
-        //        formatter.numberStyle = .currency // UAH
-        //        formatter.currencySymbol = "$" // $ after price
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         formatter.locale = Locale(identifier: "en_US") // replace coma with dot

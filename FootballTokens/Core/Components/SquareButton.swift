@@ -16,7 +16,7 @@ struct SquareButton: View {
         Button(action: action, label: {
             ZStack {
                 RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                    .frame(width: 50, height: 50)
+                    .frame(width: 44, height: 44)
                     .foregroundStyle(Color.layersColor.layerOne)
                 
                 image

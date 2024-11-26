@@ -16,8 +16,6 @@ struct CustomChartView: View {
     private let startingDate: Date
     private let endingDate: Date
     
-//    private let dataService: CoinDataService
-    
     @State private var percentage: CGFloat = 0
     @State private var tappedXPosition: CGFloat? = nil
     @State private var tappedYPosition: CGFloat? = nil
@@ -37,6 +35,7 @@ struct CustomChartView: View {
         
         VStack {
             chartView
+                .padding(.top)
                 .frame(height: 100)
                 .background(chartVackground)
                 .overlay(alignment: .trailing) {
@@ -63,6 +62,7 @@ struct CustomChartView: View {
             Spacer()
             Divider()
         }
+        .padding(.top)
         .padding(.horizontal)
     }
     
