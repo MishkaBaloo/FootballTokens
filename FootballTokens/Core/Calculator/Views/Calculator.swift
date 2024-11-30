@@ -25,6 +25,7 @@ struct Calculator: View {
                 
                 Spacer()
             }
+            .padding(.top)
         }
     }
 }

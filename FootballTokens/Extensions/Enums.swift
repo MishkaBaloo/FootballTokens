@@ -15,6 +15,16 @@ enum TimePeriods: String, CaseIterable {
     case month
     case year
     
+    var hours: Int {
+        switch self {
+        case .day: return 24
+        case .week: return 168
+        case .month: return 720
+        case .year: return 8760
+        case .hour: return 1
+        }
+    }
+    
     var keyword: String {
         switch self {
         case .hour: "1h"

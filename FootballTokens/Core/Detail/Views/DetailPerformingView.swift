@@ -1,13 +1,13 @@
 //
-//  BestPerformingView.swift
+//  DetailPerformingView.swift
 //  FootballTokens
 //
-//  Created by Michael on 11/22/24.
+//  Created by Michael on 11/29/24.
 //
 
 import SwiftUI
 
-struct BestPerformingView: View {
+struct DetailPerformingView: View {
     
     let coin: CoinModel
     
@@ -34,10 +34,9 @@ struct BestPerformingView: View {
                         
                         VStack(spacing: 0) {
                             HStack(spacing: 0) {
-                                Text(coin.change ?? "--")
-                                    .foregroundColor(Color.supportColor.success)
+                                Text(coin.price?.asMoneySignString() ?? "")
                                     .font(.system(size: 26, weight: .bold))
-                                Image(.icon)
+                                    .foregroundStyle(Color.textColor.primary)
                             }
                             .padding(.top, 8)
                             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -45,9 +44,10 @@ struct BestPerformingView: View {
                             Spacer()
                             
                             HStack {
-                                Text(coin.price?.asMoneySignString() ?? "")
-                                    .font(.system(size: 16, weight: .bold))
-                                    .foregroundStyle(Color.textColor.primary)
+                                Text(coin.change ?? "--").foregroundColor(((coin.change?.contains("-") ?? true)) ?
+                                                                          Color.supportColor.error : Color.supportColor.success)
+                                .font(.system(size: 16, weight: .bold))
+                                Image(((coin.change?.contains("-") ?? true) ? .property1TrendDown : .property1TrandUp))
                             }
                             .frame(maxWidth: .infinity, alignment: .trailing)
                         }
@@ -59,6 +59,6 @@ struct BestPerformingView: View {
 }
 
 #Preview {
-    BestPerformingView(coin: CoinModel.mok)
+    DetailPerformingView(coin: CoinModel.mok)
+        .preferredColorScheme(.dark)
 }
-

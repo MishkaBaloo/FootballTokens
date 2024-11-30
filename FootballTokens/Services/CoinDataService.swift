@@ -14,18 +14,19 @@ class CoinDataService {
     private var coinsSubscribtions: AnyCancellable?
     
     init() {
-        getCoins(for: .day) // default values
+        getCoins(for: .day)
     }
     
     func getCoins(for timePeriod: TimePeriods) {
-
-//        guard let url = URL(string: "https://api.coinranking.com/v2/coins?timePeriod=\(timePeriod.keyword)&tags=football-club&orderBy=marketCap")
-        guard let url = URL(string: "https://api.coinranking.com/v2/coins?tags=meme&timePeriod=\(timePeriod.keyword)")
+        guard let url = URL(string: "https://api.coinranking.com/v2/coins?tags=football-club&timePeriod=\(timePeriod.keyword)")
         else { return }
         
         coinsSubscribtions = NetworkingManager.download(url: url)
             .decode(type: Welcome.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+
             .sink(receiveCompletion: NetworkingManager.handleComplition, receiveValue: { [weak self] returnedCoins in
+                print("API Response: \(returnedCoins)")
                 self?.allCoins = returnedCoins.data?.coins ?? []
                 self?.coinsSubscribtions?.cancel()
             })

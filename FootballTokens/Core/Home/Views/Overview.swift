@@ -12,10 +12,11 @@ struct Overview: View {
     @EnvironmentObject private var vm: HomeViewModel
     
     @State private var showFavoriteView: Bool = false
-    @State private var sortButtonPress: Bool = false
     
     @State private var selectionTime: TimePeriods = .day // default value for dateTime
     @State private var selectionFilter: Sorting = .marketCup // defualt value for sorting
+    @State private var showDetailView: Bool = false
+    @State private var selectedCoin: CoinModel? = nil
     
     var body: some View {
         NavigationStack {
@@ -31,6 +32,7 @@ struct Overview: View {
                     sorting
                     coinsList
                 }
+                .padding(.top)
             }
             .onChange(of: selectionFilter, { oldValue, newValue in
                 vm.sortCoins(sort: newValue, coins: &vm.allCoins)
@@ -38,7 +40,9 @@ struct Overview: View {
             .onChange(of: selectionTime, { oldValue, newValue in
                 vm.updateCoins(for: newValue)
             })
-            
+            .navigationDestination(isPresented: $showDetailView) {
+                DetailLoadingView(coin: $selectedCoin)
+            }
             .navigationDestination(isPresented: $showFavoriteView) {
                 Favorite()
             }
@@ -56,6 +60,11 @@ struct Overview: View {
 // MARK: Extensions
 
 extension Overview {
+    
+    private func segue(coin: CoinModel) {
+        selectedCoin = coin
+        showDetailView.toggle()
+    }
     
     private var header: some View {
         HStack {
@@ -81,7 +90,7 @@ extension Overview {
             if let coin = vm.bestPerformingCoin {
                 BestPerformingView(coin: coin)
                     .onTapGesture {
-                        // detail of best perfomance
+                        segue(coin: coin)
                     }
             
             if let chart = vm.bestPerformingCoin {
@@ -100,7 +109,6 @@ extension Overview {
             CustomPickerByTimePeriod(defaultSelection: .day, selection: $selectionTime)
             Spacer()
             CustomPickerByFilter(defaultSelection: .marketCup, selection: $selectionFilter)
-            .padding(.horizontal, 4)
         }
         .padding()
         .zIndex(1.0)
@@ -110,6 +118,9 @@ extension Overview {
             ScrollView {
                 ForEach(vm.allCoins) { coin in
                     CoinRowView(coin: coin)
+                        .onTapGesture {
+                            segue(coin: coin)
+                        }
                 }
                 Spacer(minLength: 100)
             }

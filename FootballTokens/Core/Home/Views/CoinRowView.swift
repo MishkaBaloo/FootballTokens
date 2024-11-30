@@ -27,7 +27,7 @@ struct CoinRowView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(spacing: 0) {
-                    Text(coin.price.asMoneySignString())
+                    Text(coin.price?.asMoneySignString() ?? "")
                         .foregroundStyle(Color.textColor.primary)
                         .font(.system(size: 16, weight: .bold))
                         .padding(.leading)

@@ -24,6 +24,7 @@ struct Favorite: View {
                 notSavedTokensText
                 Spacer()
             }
+            .padding(.top)
             .navigationBarBackButtonHidden(true)
         }
     }

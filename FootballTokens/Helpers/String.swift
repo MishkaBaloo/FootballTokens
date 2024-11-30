@@ -45,5 +45,14 @@ extension String {
     func asMilMoneySignString() -> String {
         return "$ " + formatToMillions() + " m"
     }
+    
+    func formatCurrencyToBTC() -> String {
+        guard let value = Double(self) else { return "0.0" }
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 7
+        formatter.minimumFractionDigits = 1
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter.string(from: NSNumber(value: value)) ?? "0.0"
+    }
 }
 

@@ -1,15 +1,15 @@
 //
-//  CustomChartView.swift
+//  DetailChartView.swift
 //  FootballTokens
 //
-//  Created by Michael on 11/22/24.
+//  Created by Michael on 11/29/24.
 //
 
 import SwiftUI
 
-struct CustomChartView: View {
+struct DetailChartView: View {
     
-    private let data: [Double]
+    @Binding var data: [Double]
     private let maxY: Double
     private let minY: Double
     private let lineColor: Color
@@ -17,26 +17,18 @@ struct CustomChartView: View {
     private let endingDate: Date
     
     @State private var percentage: CGFloat = 0
-    @State private var tappedXPosition: CGFloat? = nil
-    @State private var tappedYPosition: CGFloat? = nil
-    @State private var tappedPrice: Double? = nil
-    
-    init(coin: CoinModel) {
-        data = coin.sparkline.compactMap { Double($0 ?? "") }
-        
-        maxY = data.max() ?? 0
-        minY = data.min() ?? 0
-        
-        let priceChange = (data.last ?? 0) - (data.first ?? 0)
-        lineColor = priceChange > 0 ? Color.supportColor.success : Color.supportColor.error
-        
-        endingDate = Date()
-        startingDate = endingDate.addingTimeInterval(-24 * 60 * 60) // (-7*24*60*60) - week
+
+    init(data: Binding<[Double]>, timePeriod: TimePeriods) {
+        self._data = data
+        self.maxY = data.wrappedValue.max() ?? 0
+        self.minY = data.wrappedValue.min() ?? 0
+        let priceChange = (data.wrappedValue.last ?? 0) - (data.wrappedValue.first ?? 0)
+        self.lineColor = priceChange > 0 ? Color.supportColor.success : Color.supportColor.error
+        self.endingDate = Date()
+        self.startingDate = Calendar.current.date(byAdding: .hour, value: -timePeriod.hours, to: endingDate) ?? Date()
     }
     
     var body: some View {
-        
-        
         VStack {
             chartView
                 .padding(.top)
@@ -47,13 +39,22 @@ struct CustomChartView: View {
                 }
             chartDateLabel
         }
+        .onChange(of: data) { oldValue, newValue in
+            percentage = 0
+            withAnimation(.linear(duration: 2)) {
+                percentage = 1
+            }
+        }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.linear(duration: 2)) {
-                    percentage = 1
+                if !data.isEmpty {
+                    withAnimation(.linear(duration: 2)) {
+                        percentage = 1
+                    }
                 }
             }
         }
+
     }
     
     private var chartVackground: some View {
@@ -151,8 +152,3 @@ struct CustomChartView: View {
         }
     }
 }
-
-#Preview {
-    CustomChartView(coin: CoinModel.mok)
-}
-
