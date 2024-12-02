@@ -89,7 +89,6 @@ extension TabBarView {
             .animation(.smooth, value: selection)
             .padding(.horizontal, 40)
         }
-        .padding(.bottom, 8)
         .frame(maxWidth: .infinity)
         .background(Color.backgroundColor.background.ignoresSafeArea(edges: .bottom))
         

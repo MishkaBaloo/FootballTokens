@@ -99,6 +99,7 @@ struct CustomPickerByTimePeriod: View {
                         withAnimation(.snappy) {
                             selection = sortingTime
                             showTimePerios = false
+                            print("Time period cnahged to: \(sortingTime)")
                         }
                     }
                 }

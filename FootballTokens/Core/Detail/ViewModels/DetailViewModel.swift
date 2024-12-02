@@ -40,8 +40,11 @@ class DetailViewModel: ObservableObject {
         }
     
     func updateCoins(for timePeriod: TimePeriods) {
-        coinDataService.getCoins(for: timePeriod)
-        self.chartData = coinDataService.allCoins.first?.sparkline.compactMap { Double($0 ?? "") } ?? []
+        coinDataService.getCoins(for: timePeriod) { [weak self] (coins: [CoinModel]) in
+            DispatchQueue.main.async {
+                self?.chartData = coins.first?.sparkline.compactMap { Double($0 ?? "") } ?? []
+            }
+        }
     }
     
     private func mapDataToStatistics(coinDetail: Coin) -> (supply: [StatisticModel], value: [StatisticModel]) {

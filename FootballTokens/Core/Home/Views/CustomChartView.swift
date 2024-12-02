@@ -47,11 +47,10 @@ struct CustomChartView: View {
                 }
             chartDateLabel
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.linear(duration: 2)) {
-                    percentage = 1
-                }
+        .onChange(of: data) { oldValue, newValue in
+            percentage = 0
+            withAnimation(.linear(duration: 2)) {
+                percentage = 1
             }
         }
     }

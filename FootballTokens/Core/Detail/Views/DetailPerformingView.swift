@@ -41,15 +41,16 @@ struct DetailPerformingView: View {
                             .padding(.top, 8)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             
-                            Spacer()
+                           
                             
-                            HStack {
+                            HStack(spacing: 0) {
                                 Text(coin.change ?? "--").foregroundColor(((coin.change?.contains("-") ?? true)) ?
                                                                           Color.supportColor.error : Color.supportColor.success)
-                                .font(.system(size: 16, weight: .bold))
+                                .font(.system(size: 14, weight: .light))
                                 Image(((coin.change?.contains("-") ?? true) ? .property1TrendDown : .property1TrandUp))
                             }
                             .frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding(.top, 4)
                         }
                         .frame(height: 70)
                     }

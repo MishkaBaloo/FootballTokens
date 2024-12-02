@@ -47,7 +47,6 @@ struct Overview: View {
                 Favorite()
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -92,11 +91,12 @@ extension Overview {
                     .onTapGesture {
                         segue(coin: coin)
                     }
-            
-            if let chart = vm.bestPerformingCoin {
-                CustomChartView(coin: chart)
+                
+                if let chart = vm.bestPerformingCoin {
+                    CustomChartView(coin: chart)
+                        .padding(.top, 4)
+                }
             }
-        }
         }
     }
     

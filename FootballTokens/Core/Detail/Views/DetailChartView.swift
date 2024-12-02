@@ -30,14 +30,19 @@ struct DetailChartView: View {
     
     var body: some View {
         VStack {
-            chartView
-                .padding(.top)
-                .frame(height: 100)
-                .background(chartVackground)
-                .overlay(alignment: .trailing) {
-                    chartYAxic
-                }
-            chartDateLabel
+            if data.isEmpty {
+                ProgressView("Loading chart...")
+                    .progressViewStyle(CircularProgressViewStyle())
+            } else {
+                chartView
+                    .padding(.top)
+                    .frame(height: 100)
+                    .background(chartVackground)
+                    .overlay(alignment: .trailing) {
+                        chartYAxic
+                    }
+                chartDateLabel
+            }
         }
         .onChange(of: data) { oldValue, newValue in
             percentage = 0
@@ -45,16 +50,6 @@ struct DetailChartView: View {
                 percentage = 1
             }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                if !data.isEmpty {
-                    withAnimation(.linear(duration: 2)) {
-                        percentage = 1
-                    }
-                }
-            }
-        }
-
     }
     
     private var chartVackground: some View {

@@ -87,7 +87,20 @@ struct CoinModel: Identifiable, Codable {
     let change: String?
     let rank: Int?
     let sparkline: [String?]
-    let h24Volume: String? // need to fix
+    let h24Volume: String? 
+    
+    enum CodingKeys: String, CodingKey {
+        case uuid
+        case symbol
+        case name
+        case iconUrl
+        case marketCap
+        case price
+        case change
+        case rank
+        case sparkline
+        case h24Volume = "24hVolume"
+    }
 
     
     static var mok: Self {

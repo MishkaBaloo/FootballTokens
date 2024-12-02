@@ -25,7 +25,8 @@ struct Settings: View {
                 // header
                 Text("Settings")
                     .foregroundStyle(Color.textColor.primary)
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.headline)
+                    .fontWeight(.heavy)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top)
                     .padding(.horizontal)

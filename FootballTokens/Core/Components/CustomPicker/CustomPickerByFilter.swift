@@ -82,6 +82,7 @@ struct CustomPickerByFilter: View {
                         withAnimation(.snappy) {
                             selection = sortingOption
                             showTimePerios = false
+                            print("Market filter changed to: \(sortingOption)")
                         }
                     }
                 }

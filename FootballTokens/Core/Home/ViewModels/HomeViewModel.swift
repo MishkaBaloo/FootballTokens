@@ -41,14 +41,23 @@ class HomeViewModel: ObservableObject {
             })
     }
     
-    func updateCoins(for timePerios: TimePeriods) {
-        coinDataService.getCoins(for: timePerios)
+//    func updateCoins(for timePerios: TimePeriods) {
+//        coinDataService.getCoins(for: timePerios, completion: <#([CoinModel]) -> Void#>)
+//    }
+    
+    func updateCoins(for timePeriod: TimePeriods) {
+        coinDataService.getCoins(for: timePeriod) { [weak self] coins in
+            DispatchQueue.main.async {
+                self?.allCoins = coins
+                self?.updateBestPerformingCoin()
+            }
+        }
     }
     
     func sortCoins(sort: Sorting, coins: inout [CoinModel]) {
         switch sort {
         case .marketCup: coins.sort { Double($0.marketCap ?? "") ?? 0 > Double($1.marketCap ?? "") ?? 0 }
-        case .tradingVolume: coins.sort { Double($0.rank ?? 0) < Double($1.rank ?? 0) }
+        case .tradingVolume: coins.sort {Double($0.h24Volume ?? "") ?? 0 > Double($1.h24Volume ?? "") ?? 0}
         case .price: coins.sort {Double($0.price ?? "") ?? 0 > Double($1.price ?? "") ?? 0 }
         case .priceReversed: coins.sort { Double($0.price ?? "") ?? 0 < Double($1.price ?? "") ?? 0 }
         case .changeReversed: coins.sort { Double($0.change ?? "0") ?? 0 < Double($1.change ?? "0") ?? 0 }

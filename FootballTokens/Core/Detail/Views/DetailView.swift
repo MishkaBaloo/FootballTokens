@@ -37,13 +37,12 @@ struct DetailView: View {
             Color.backgroundColor.background.ignoresSafeArea()
             
             // content layer
-            VStack {
+            VStack(spacing: 0) {
                 header
                 coinInfo
                 sorting
                     .zIndex(10)
                 chart
-                
                 ScrollView {
                     stat
                         .onChange(of: selectionTime, { oldValue, newValue in
@@ -53,14 +52,14 @@ struct DetailView: View {
                 .scrollIndicators(.hidden)
                 .ignoresSafeArea(.all)
                 .padding(.top)
-            }
-            .onAppear {
-                vm.updateCoins(for: selectionTime)
+                tabBar
             }
             .padding(.top)
         }
         .navigationBarBackButtonHidden(true)
-        
+        .onAppear {
+            vm.updateCoins(for: selectionTime)
+        }
     }
 }
 
@@ -86,6 +85,7 @@ extension DetailView {
     
     private var coinInfo: some View {
         DetailPerformingView(coin: vm.coin)
+            .padding(.top, 4)
     }
     
     private var sorting: some View {
@@ -102,11 +102,11 @@ extension DetailView {
     
     private var chart: some View {
         DetailChartView(data: $vm.chartData, timePeriod: selectionTime)
+            .padding(.top, 4)
     }
     
     private var stat: some View {
         VStack {
-            
             Text("Supply information")
                 .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(Color.textColor.primary)
@@ -158,7 +158,56 @@ extension DetailView {
             .background(Color.layersColor.layerTwo)
             .clipShape(.rect(cornerRadius: 20))
             .padding(.horizontal)
-            Spacer(minLength: 120)
+            .padding(.bottom)
         }
     }
+    
+    private var tabBar: some View {
+        VStack(spacing: 0) {
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundStyle(Color.strokeColor.primary)
+                .edgesIgnoringSafeArea(.horizontal)
+            
+            HStack(spacing: 0) {
+                if let websiteString = vm.websiteURL,
+                   let url = URL(string: websiteString) {
+                    Link(destination: url, label: {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(height: 45)
+                            .frame(maxWidth: .infinity)
+                            .foregroundStyle(Color.accentsColor.accent)
+                            .overlay {
+                                Text("Go to website")
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundStyle(Color.textColor.primary)
+                            }
+                    })
+                }
+                
+                Spacer()
+                
+                if let websiteString = vm.websiteURL,
+                   let url = URL(string: websiteString) {
+                    ShareLink(item: url) {
+                        ZStack {
+                            RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                                .frame(width: 44, height: 44)
+                                .foregroundStyle(Color.layersColor.layerOne)
+                            
+                            Image(.share)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .padding(.top)
+        }
+        .padding(.bottom, 4)
+    }
+    
 }
