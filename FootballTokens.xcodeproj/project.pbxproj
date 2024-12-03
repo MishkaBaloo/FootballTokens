@@ -25,6 +25,8 @@
 		CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F902CEBA6E800BAE16B /* Favorite.swift */; };
 		CE91A91A2CFA1E29006043CB /* DetailPerformingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A9192CFA1E29006043CB /* DetailPerformingView.swift */; };
 		CE91A91C2CFA3DBE006043CB /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A91B2CFA3DBE006043CB /* DetailChartView.swift */; };
+		CEB9FD812CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB9FD7F2CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld */; };
+		CEB9FD832CFF7D8100ACC0CD /* FavoritesDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */; };
 		CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC757E2CECC50A003915FC /* CoinModel.swift */; };
 		CEBC75812CECC921003915FC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC75802CECC921003915FC /* NetworkingManager.swift */; };
 		CEBC75832CECCE23003915FC /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC75822CECCE23003915FC /* CoinDataService.swift */; };
@@ -69,6 +71,8 @@
 		CE5D8F902CEBA6E800BAE16B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		CE91A9192CFA1E29006043CB /* DetailPerformingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPerformingView.swift; sourceTree = "<group>"; };
 		CE91A91B2CFA3DBE006043CB /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
+		CEB9FD802CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesContainer.xcdatamodel; sourceTree = "<group>"; };
+		CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataService.swift; sourceTree = "<group>"; };
 		CEBC757E2CECC50A003915FC /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		CEBC75802CECC921003915FC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		CEBC75822CECCE23003915FC /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				CEBC757E2CECC50A003915FC /* CoinModel.swift */,
 				CE0FEB342CF796D30007B231 /* CoinDetailModel.swift */,
 				CE0FEB382CF7A29C0007B231 /* StatisticModel.swift */,
+				CEB9FD7F2CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			children = (
 				CEBC75822CECCE23003915FC /* CoinDataService.swift */,
 				CE0FEB322CF7965D0007B231 /* CoinDetailDataService.swift */,
+				CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				CE0FEB332CF7965D0007B231 /* CoinDetailDataService.swift in Sources */,
 				CEDE89F32CF5197500C6BD2B /* APIKeyProvider.swift in Sources */,
 				CEBC75812CECC921003915FC /* NetworkingManager.swift in Sources */,
+				CEB9FD832CFF7D8100ACC0CD /* FavoritesDataService.swift in Sources */,
 				CE0FEB372CF797DC0007B231 /* DetailViewModel.swift in Sources */,
 				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
@@ -461,6 +468,7 @@
 				CE0C745F2CEE42FA003DC82F /* CoinImageView.swift in Sources */,
 				CECC8E762CF0DF8F00CF5F1A /* BestPerformingView.swift in Sources */,
 				CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */,
+				CEB9FD812CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld in Sources */,
 				CE91A91C2CFA3DBE006043CB /* DetailChartView.swift in Sources */,
 				CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */,
 				CECC8E7A2CF10D9800CF5F1A /* Date.swift in Sources */,
@@ -684,6 +692,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEB9FD7F2CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEB9FD802CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodel */,
+			);
+			currentVersion = CEB9FD802CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodel */;
+			name = FavoritesContainer.xcdatamodeld;
+			path = /Users/user/Documents/Programming/SwiftfulBootcamp/FootballTokens/FootballTokens/Models/FavoritesContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE5D8F5B2CEB6D0500BAE16B /* Project object */;
 }

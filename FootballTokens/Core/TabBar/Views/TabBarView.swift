@@ -47,6 +47,7 @@ extension TabBarView {
     @ViewBuilder private func getTabImage(for tab: TabBarItems) -> some View {
       (localSelection == tab ? tab.activeIcon : tab.defaultIcon)
         .resizable()
+        .scaledToFit()
         .frame(width: 24, height: 24)
         .padding(.top, 8)
         .onTapGesture {

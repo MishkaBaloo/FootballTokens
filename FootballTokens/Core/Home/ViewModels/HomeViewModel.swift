@@ -11,9 +11,12 @@ import Combine
 class HomeViewModel: ObservableObject {
     
     @Published var allCoins: [CoinModel] = []
+    @Published var favoriteCoins: [CoinModel] = []
     @Published var bestPerformingCoin: CoinModel? // just one token
+    
     private let coinDataService = CoinDataService()
     private var cancellables = Set<AnyCancellable>()
+    private let favoriteDataService = FavoritesDataService()
     
     init() {
         addSbscribers()
@@ -28,6 +31,24 @@ class HomeViewModel: ObservableObject {
                 self?.updateBestPerformingCoin()
             }
             .store(in: &cancellables)
+        
+        $allCoins
+            .combineLatest(favoriteDataService.$savedEntities)
+            .map(mapAllCoinsToFavoriteCoins)
+            .sink { [weak self] returnedFavoriteCoins in
+                self?.favoriteCoins = returnedFavoriteCoins
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func mapAllCoinsToFavoriteCoins(allCoins: [CoinModel], entity: [FavoritesEntity]) -> [CoinModel] {
+        allCoins
+            .compactMap { coin -> CoinModel? in
+                guard entity.first(where: {$0.coinID == coin.id}) != nil else {
+                    return nil
+                }
+                return coin // possible error
+            }
     }
     
     private func updateBestPerformingCoin() {
@@ -40,10 +61,6 @@ class HomeViewModel: ObservableObject {
                 return change1 < change2
             })
     }
-    
-//    func updateCoins(for timePerios: TimePeriods) {
-//        coinDataService.getCoins(for: timePerios, completion: <#([CoinModel]) -> Void#>)
-//    }
     
     func updateCoins(for timePeriod: TimePeriods) {
         coinDataService.getCoins(for: timePeriod) { [weak self] coins in

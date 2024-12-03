@@ -23,8 +23,15 @@ struct DetailLoadingView: View {
 struct DetailView: View {
     
     @Environment(\.dismiss) var presentationMode
+    @EnvironmentObject private var homeVM: HomeViewModel
+ 
     @StateObject private var vm: DetailViewModel
     @State private var selectionTime: TimePeriods = .day
+    @State private var selectedCoin: CoinModel? = nil
+    @State private var isSaved: Bool = false
+    
+    private let favoriteDataService = FavoritesDataService()
+    
     
     init(coin: CoinModel) {
         _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
@@ -59,12 +66,14 @@ struct DetailView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             vm.updateCoins(for: selectionTime)
+            isSaved = favoriteDataService.isFavorite(coinID: vm.coin.id)
         }
     }
 }
 
 #Preview {
     DetailView(coin: CoinModel.mok)
+        .environmentObject(HomeViewModel())
 }
 
 extension DetailView {
@@ -75,8 +84,14 @@ extension DetailView {
                 presentationMode.callAsFunction()
             }
             Spacer()
-            SquareButton(image: Image(.favorite)) {
-                // saving coin
+            SquareButton(image: withAnimation(.snappy, {
+                isSaved ? Image(.vector) : Image(.favorite)
+            })) {
+                favoriteDataService.updateFavorites(coin: vm.coin)
+                isSaved.toggle()
+                if !isSaved {
+                    presentationMode.callAsFunction()
+                }
             }
         }
         .frame(maxWidth: .infinity)

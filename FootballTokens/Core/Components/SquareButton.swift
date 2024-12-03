@@ -20,7 +20,6 @@ struct SquareButton: View {
                     .foregroundStyle(Color.layersColor.layerOne)
                 
                 image
-                    .resizable()
                     .scaledToFit()
                     .frame(width: 24, height: 24)
             }
@@ -29,5 +28,5 @@ struct SquareButton: View {
 }
 
 #Preview {
-    SquareButton(image: Image(.tokenPlaceholder), action: {})
+    SquareButton(image: Image(.vector), action: {})
 }
