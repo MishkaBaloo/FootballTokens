@@ -12,16 +12,18 @@ struct Settings: View {
     
     @EnvironmentObject var tabBarViewModel: TabBarViewModel
     @State private var showAlert: Bool = false
+    
+    private let favoriteDataService = FavoritesDataService()
 
     
     var body: some View {
         ZStack {
             
+            // background layer
             Color.backgroundColor.background.ignoresSafeArea()
             
             // content layer
             VStack(spacing: 15) {
-                
                 // header
                 Text("Settings")
                     .foregroundStyle(Color.textColor.primary)
@@ -30,7 +32,6 @@ struct Settings: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top)
                     .padding(.horizontal)
-                
                 // about app
                 VStack {
                     Text("Abbout app")
@@ -38,21 +39,16 @@ struct Settings: View {
                         .font(.system(size: 16, weight: .light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    
-
                     privacyPolicy
                     terms
-                    
                     // feedback
                     Text("Feedback")
                         .foregroundStyle(Color.textColor.secondary)
                         .font(.system(size: 16, weight: .light))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    
                     share
                     rate
-                    
                     // clearData button
                     Spacer()
                     clearData
@@ -74,105 +70,37 @@ struct Settings: View {
 extension Settings {
     
     private var privacyPolicy: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 20)
-                .frame(height: 70)
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(Color.layersColor.layerTwo)
-                .overlay {
-                    HStack {
-                        Image(.privacy)
-                        Text("Privacy policy")
-                            .foregroundStyle(Color.textColor.primary)
-                            .font(.system(size: 16, weight: .heavy))
-                        Spacer()
-                        SquareButton(image: Image(.arrowRight)) {
-                            if let url = URL(string: AppConfig.privacyPolicyLink) {
-                                DispatchQueue.main.async {
-                                    UIApplication.shared.open(url)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
+        SettingRowView(image: Image(.privacy), title: "Privacy policy") {
+            if let url = URL(string: AppConfig.privacyPolicyLink) {
+                DispatchQueue.main.async {
+                    UIApplication.shared.open(url)
                 }
+            }
         }
-        .padding(.horizontal)
     }
     
     private var terms: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 20)
-                .frame(height: 70)
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(Color.layersColor.layerTwo)
-                .overlay {
-                    HStack {
-                        Image(.terms)
-                        Text("Terms of use")
-                            .foregroundStyle(Color.textColor.primary)
-                            .font(.system(size: 16, weight: .heavy))
-                        Spacer()
-                        SquareButton(image: Image(.arrowRight)) {
-                            if let url = URL(string: AppConfig.termsOfUseLink) {
-                                DispatchQueue.main.async {
-                                    UIApplication.shared.open(url)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
+        SettingRowView(image: Image(.terms), title: "Terms of use") {
+            if let url = URL(string: AppConfig.termsOfUseLink) {
+                DispatchQueue.main.async {
+                    UIApplication.shared.open(url)
                 }
+            }
         }
-        .padding(.horizontal)
     }
     
     private var share: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 20)
-                .frame(height: 70)
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(Color.layersColor.layerTwo)
-                .overlay {
-                    HStack {
-                        Image(.share)
-                        Text("Share this app")
-                            .foregroundStyle(Color.textColor.primary)
-                            .font(.system(size: 16, weight: .heavy))
-                        Spacer()
-                        SquareButton(image: Image(.arrowRight)) {
-                            
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+        SettingRowView(image: Image(.share), title: "Share this app") {
+            // share code
         }
-        .padding(.horizontal)
     }
     
     private var rate: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 20)
-                .frame(height: 70)
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(Color.layersColor.layerTwo)
-                .overlay {
-                    HStack {
-                        Image(.rate)
-                        Text("Rate us")
-                            .foregroundStyle(Color.textColor.primary)
-                            .font(.system(size: 16, weight: .heavy))
-                        Spacer()
-                        SquareButton(image: Image(.arrowRight)) {
-                            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-                                SKStoreReviewController.requestReview(in: scene)
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+        SettingRowView(image: Image(.rate), title: "Rate us") {
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
         }
-        .padding(.horizontal)
     }
     
     private var clearData: some View {
@@ -197,6 +125,7 @@ extension Settings {
                     .foregroundStyle(Color.red)
             }
             Button(role: .destructive, action: {
+                favoriteDataService.clearCache()
                 tabBarViewModel.changeTab(tab: .overview)
             }) {
                 Text("Clear")

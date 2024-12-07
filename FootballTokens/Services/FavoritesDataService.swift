@@ -27,7 +27,6 @@ class FavoritesDataService {
     }
     
     // MARK: PUBLIC SECTIONS
-    
     func updateFavorites(coin: CoinModel) {
         if let entity = savedEntities.first(where: {$0.coinID == coin.id}) {
             delete(entity: entity)
@@ -41,10 +40,21 @@ class FavoritesDataService {
         return savedEntities.contains(where: { $0.coinID == coinID })
     }
     
+    func clearCache() {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try container.viewContext.execute(deleteRequest)
+            savedEntities.removeAll()
+        } catch let error {
+            print("Error clearing cache: \(error)")
+        }
+    }
     
     // MARK: PRIVATE SECTIONS
-    
-     func getFavorites() {
+    private func getFavorites() {
         let request = NSFetchRequest<FavoritesEntity>(entityName: entityName)
         do {
             savedEntities = try container.viewContext.fetch(request)

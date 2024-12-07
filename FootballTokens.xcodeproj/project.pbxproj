@@ -23,8 +23,14 @@
 		CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */; };
 		CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */; };
 		CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F902CEBA6E800BAE16B /* Favorite.swift */; };
+		CE610F602D022C0500AA333C /* CustomPickerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE610F5F2D022C0500AA333C /* CustomPickerCalculator.swift */; };
+		CE610F622D023FDA00AA333C /* CustomPickerCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE610F612D023FDA00AA333C /* CustomPickerCurrency.swift */; };
+		CE76E7602D036394005CD752 /* FirstLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E75F2D036394005CD752 /* FirstLaunchView.swift */; };
 		CE91A91A2CFA1E29006043CB /* DetailPerformingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A9192CFA1E29006043CB /* DetailPerformingView.swift */; };
 		CE91A91C2CFA3DBE006043CB /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A91B2CFA3DBE006043CB /* DetailChartView.swift */; };
+		CE9BE7082D00D66800B6A314 /* CalculatorCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7072D00D66800B6A314 /* CalculatorCurrency.swift */; };
+		CE9DCBDA2D04B0CA00761C3B /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DCBD92D04B0CA00761C3B /* SettingRowView.swift */; };
+		CE9DCBDC2D04B55800761C3B /* CalculatorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DCBDB2D04B55800761C3B /* CalculatorButtons.swift */; };
 		CEB9FD812CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB9FD7F2CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld */; };
 		CEB9FD832CFF7D8100ACC0CD /* FavoritesDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */; };
 		CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC757E2CECC50A003915FC /* CoinModel.swift */; };
@@ -69,8 +75,14 @@
 		CE5D8F8C2CEB9BD800BAE16B /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		CE5D8F8E2CEBA07100BAE16B /* SquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButton.swift; sourceTree = "<group>"; };
 		CE5D8F902CEBA6E800BAE16B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		CE610F5F2D022C0500AA333C /* CustomPickerCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerCalculator.swift; sourceTree = "<group>"; };
+		CE610F612D023FDA00AA333C /* CustomPickerCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerCurrency.swift; sourceTree = "<group>"; };
+		CE76E75F2D036394005CD752 /* FirstLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchView.swift; sourceTree = "<group>"; };
 		CE91A9192CFA1E29006043CB /* DetailPerformingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPerformingView.swift; sourceTree = "<group>"; };
 		CE91A91B2CFA3DBE006043CB /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
+		CE9BE7072D00D66800B6A314 /* CalculatorCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCurrency.swift; sourceTree = "<group>"; };
+		CE9DCBD92D04B0CA00761C3B /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
+		CE9DCBDB2D04B55800761C3B /* CalculatorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtons.swift; sourceTree = "<group>"; };
 		CEB9FD802CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesContainer.xcdatamodel; sourceTree = "<group>"; };
 		CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataService.swift; sourceTree = "<group>"; };
 		CEBC757E2CECC50A003915FC /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
@@ -236,6 +248,7 @@
 		CE5D8F7E2CEB994D00BAE16B /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				CE76E75F2D036394005CD752 /* FirstLaunchView.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -271,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC955902CEBB23B003B6C09 /* Settings.swift */,
+				CE9DCBD92D04B0CA00761C3B /* SettingRowView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -347,6 +361,8 @@
 			isa = PBXGroup;
 			children = (
 				CEC955982CEBCC4F003B6C09 /* Calculator.swift */,
+				CE610F5F2D022C0500AA333C /* CustomPickerCalculator.swift */,
+				CE610F612D023FDA00AA333C /* CustomPickerCurrency.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +370,8 @@
 		CE5D8F8B2CEB9B9600BAE16B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CE9BE7072D00D66800B6A314 /* CalculatorCurrency.swift */,
+				CE9DCBDB2D04B55800761C3B /* CalculatorButtons.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -443,6 +461,7 @@
 				CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */,
 				CECBA4482CF7DFD000314B18 /* DetailView.swift in Sources */,
 				CEBC758B2CECD6CC003915FC /* String.swift in Sources */,
+				CE610F622D023FDA00AA333C /* CustomPickerCurrency.swift in Sources */,
 				CE0C74552CEE1CD1003DC82F /* HomeViewModel.swift in Sources */,
 				CE0C745B2CEE4258003DC82F /* Enums.swift in Sources */,
 				CE5D8F8F2CEBA07100BAE16B /* SquareButton.swift in Sources */,
@@ -451,12 +470,14 @@
 				CECC8E782CF1028400CF5F1A /* Double.swift in Sources */,
 				CE0FEB352CF796D30007B231 /* CoinDetailModel.swift in Sources */,
 				CEF6C1142CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift in Sources */,
+				CE9BE7082D00D66800B6A314 /* CalculatorCurrency.swift in Sources */,
 				CEC9559B2CEBCFB3003B6C09 /* TabBarItems.swift in Sources */,
 				CE5D8F8D2CEB9BD800BAE16B /* Overview.swift in Sources */,
 				CE0FEB332CF7965D0007B231 /* CoinDetailDataService.swift in Sources */,
 				CEDE89F32CF5197500C6BD2B /* APIKeyProvider.swift in Sources */,
 				CEBC75812CECC921003915FC /* NetworkingManager.swift in Sources */,
 				CEB9FD832CFF7D8100ACC0CD /* FavoritesDataService.swift in Sources */,
+				CE610F602D022C0500AA333C /* CustomPickerCalculator.swift in Sources */,
 				CE0FEB372CF797DC0007B231 /* DetailViewModel.swift in Sources */,
 				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
@@ -473,10 +494,13 @@
 				CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */,
 				CECC8E7A2CF10D9800CF5F1A /* Date.swift in Sources */,
 				CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */,
+				CE76E7602D036394005CD752 /* FirstLaunchView.swift in Sources */,
 				CECC8E7C2CF111BE00CF5F1A /* CustomChartView.swift in Sources */,
+				CE9DCBDC2D04B55800761C3B /* CalculatorButtons.swift in Sources */,
 				CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */,
 				CEC9559D2CEBD162003B6C09 /* TabBarViewModel.swift in Sources */,
 				CE5D8F762CEB735400BAE16B /* Color.swift in Sources */,
+				CE9DCBDA2D04B0CA00761C3B /* SettingRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

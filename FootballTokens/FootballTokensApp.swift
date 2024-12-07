@@ -10,9 +10,16 @@ import SwiftUI
 @main
 struct FootballTokensApp: App {
     
+    @AppStorage("hasLaunchedBefore") private var hasLaunchedBefore: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+                if hasLaunchedBefore {
+                    ContentView()
+                } else {
+                    FirstLaunchView(isFirstLaunch: $hasLaunchedBefore)
+                        .transition(.move(edge: .leading))
+                }
         }
         .environmentObject(HomeViewModel())
     }

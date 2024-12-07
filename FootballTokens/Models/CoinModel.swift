@@ -79,7 +79,7 @@ struct DataClass: Codable {
 }
 
 // MARK: - Coin
-struct CoinModel: Identifiable, Codable {
+struct CoinModel: Identifiable, Codable, Equatable {
     var id: String { return uuid }
     let uuid, symbol, name: String
     let iconUrl: String?

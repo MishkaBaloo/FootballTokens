@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var allCoins: [CoinModel] = []
     @Published var favoriteCoins: [CoinModel] = []
-    @Published var bestPerformingCoin: CoinModel? // just one token
+    @Published var bestPerformingCoin: CoinModel?
     
     private let coinDataService = CoinDataService()
     private var cancellables = Set<AnyCancellable>()
@@ -47,7 +47,7 @@ class HomeViewModel: ObservableObject {
                 guard entity.first(where: {$0.coinID == coin.id}) != nil else {
                     return nil
                 }
-                return coin // possible error
+                return coin
             }
     }
     

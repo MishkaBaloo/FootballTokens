@@ -48,7 +48,6 @@ struct DetailView: View {
                 header
                 coinInfo
                 sorting
-                    .zIndex(10)
                 chart
                 ScrollView {
                     stat
@@ -110,6 +109,7 @@ extension DetailView {
             Spacer()
             CustomPickerByTimePeriod(defaultSelection: .day, selection: $selectionTime)
         }
+        .zIndex(10)
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
         .padding(.top, 4)
@@ -117,7 +117,7 @@ extension DetailView {
     
     private var chart: some View {
         DetailChartView(data: $vm.chartData, timePeriod: selectionTime)
-            .padding(.top, 4)
+            .padding(.top, 8)
     }
     
     private var stat: some View {
@@ -156,14 +156,12 @@ extension DetailView {
             
             VStack(spacing: 0) {
                 ForEach(vm.valueStatistic) { stat in
-                    
                     if stat != vm.valueStatistic.first {
                         Divider()
                             .frame(height: 1)
                             .background(Color.strokeColor.secondary)
                             .padding(.horizontal)
                     }
-
                     StatisticView(stat: stat)
                         .padding(.top)
                         .padding(.horizontal)
@@ -179,7 +177,6 @@ extension DetailView {
     
     private var tabBar: some View {
         VStack(spacing: 0) {
-            
             Rectangle()
                 .frame(height: 1)
                 .foregroundStyle(Color.strokeColor.primary)
@@ -200,9 +197,7 @@ extension DetailView {
                             }
                     })
                 }
-                
                 Spacer()
-                
                 if let websiteString = vm.websiteURL,
                    let url = URL(string: websiteString) {
                     ShareLink(item: url) {
@@ -222,7 +217,5 @@ extension DetailView {
             .padding(.horizontal)
             .padding(.top)
         }
-        .padding(.bottom, 4)
     }
-    
 }
