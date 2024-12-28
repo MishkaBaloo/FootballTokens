@@ -78,7 +78,7 @@ extension TabBarView {
                         getTabImage(for: tab)
                         
                         Text(tab.title)
-                            .font(.system(size: 12))
+                            .setFont(.nunitoSansRegular, size: 12)
                             .foregroundStyle(localSelection == tab ? Color.accentsColor.accent : Color.textColor.primary)
                     }
                     .frame(maxWidth: .infinity)

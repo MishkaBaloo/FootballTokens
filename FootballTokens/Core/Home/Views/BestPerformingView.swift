@@ -23,10 +23,10 @@ struct BestPerformingView: View {
                             Text(coin.symbol)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundStyle(Color.textColor.primary)
-                                .font(.system(size: 20, weight: .bold))
+                                .setFont(.nunitoSansBold, size: 20)
                             Text("Market cap \(coin.marketCap?.asMilMoneySignString() ?? "")")
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.system(size: 16, weight: .thin))
+                                .setFont(.nunitoSansRegular, size: 14)
                                 .foregroundStyle(Color.textColor.secondary)
                         }
                         .frame(width: 180, height: 50)
@@ -36,17 +36,14 @@ struct BestPerformingView: View {
                             HStack(spacing: 0) {
                                 Text(coin.change ?? "--")
                                     .foregroundColor(Color.supportColor.success)
-                                    .font(.system(size: 26, weight: .bold))
+                                    .setFont(.nunitoSansBold, size: 30)
                                 Image(.icon)
                             }
-                            .padding(.top, 8)
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                            
-                            Spacer()
                             
                             HStack {
                                 Text(coin.price?.asMoneySignString() ?? "")
-                                    .font(.system(size: 16, weight: .bold))
+                                    .setFont(.nunitoSansBold, size: 16)
                                     .foregroundStyle(Color.textColor.primary)
                             }
                             .frame(maxWidth: .infinity, alignment: .trailing)

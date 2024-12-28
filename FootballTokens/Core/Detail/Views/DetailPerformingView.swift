@@ -23,10 +23,10 @@ struct DetailPerformingView: View {
                             Text(coin.symbol)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundStyle(Color.textColor.primary)
-                                .font(.system(size: 20, weight: .bold))
+                                .setFont(.nunitoSansBold, size: 20)
                             Text("Market cap \(coin.marketCap?.asMilMoneySignString() ?? "")")
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.system(size: 16, weight: .thin))
+                                .setFont(.nunitoSansRegular, size: 16)
                                 .foregroundStyle(Color.textColor.secondary)
                         }
                         .frame(width: 180, height: 50)
@@ -35,22 +35,18 @@ struct DetailPerformingView: View {
                         VStack(spacing: 0) {
                             HStack(spacing: 0) {
                                 Text(coin.price?.asMoneySignString() ?? "")
-                                    .font(.system(size: 26, weight: .bold))
+                                    .setFont(.nunitoSansBold, size: 30)
                                     .foregroundStyle(Color.textColor.primary)
                             }
-                            .padding(.top, 8)
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                            
-                           
                             
                             HStack(spacing: 0) {
                                 Text(coin.change ?? "--").foregroundColor(((coin.change?.contains("-") ?? true)) ?
                                                                           Color.supportColor.error : Color.supportColor.success)
-                                .font(.system(size: 14, weight: .light))
+                                .setFont(.nunitoSansRegular, size: 14)
                                 Image(((coin.change?.contains("-") ?? true) ? .property1TrendDown : .property1TrandUp))
                             }
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding(.top, 4)
                         }
                         .frame(height: 70)
                     }

@@ -47,14 +47,15 @@ extension FirstLaunchView {
         VStack {
             Text("For football fanatics and crypto enthusiasts alike")
                 .foregroundStyle(Color.textColor.primary)
-                .font(.system(size: 30, weight: .semibold))
+                .setFont(.nunitoSansBold, size: 30)
                 .padding()
             
             Text("Discover and explore a vast collection of fan tokens from football clubs around the world")
                 .foregroundStyle(Color.textColor.primary)
-                .font(.system(size: 14, weight: .regular))
-                .padding(.horizontal)
+                .setFont(.nunitoSansRegular, size: 16)
                 .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
         }
     }
     
@@ -72,11 +73,11 @@ extension FirstLaunchView {
                 .foregroundStyle(Color.accentsColor.accent)
                 .overlay {
                     Text("Let's go")
-                        .font(.system(size: 16, weight: .bold))
+                        .setFont(.nunitoSansBold, size: 16)
                         .foregroundStyle(Color.textColor.primary)
                 }
                 .padding()
-                .padding(.top, 50)
+                .padding(.top, 30)
         }
     }
 }

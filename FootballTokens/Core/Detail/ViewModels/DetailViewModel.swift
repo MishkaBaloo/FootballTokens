@@ -42,7 +42,11 @@ class DetailViewModel: ObservableObject {
     func updateCoins(for timePeriod: TimePeriods) {
         coinDataService.getCoins(for: timePeriod) { [weak self] (coins: [CoinModel]) in
             DispatchQueue.main.async {
-                self?.chartData = coins.first?.sparkline.compactMap { Double($0 ?? "") } ?? []
+                if let selectedCoin = coins.first(where: { $0.id == self?.coin.id }) {
+                    self?.chartData = selectedCoin.sparkline.compactMap { Double($0 ?? "") }
+                } else {
+                    self?.chartData = []
+                }
             }
         }
     }
@@ -97,7 +101,6 @@ class DetailViewModel: ObservableObject {
         let dilutedMarketCapStat = StatisticModel(title: "Fully diluted market cap", description: "It is a coin’s price multiplied by its supply.", value: dilutedMarketCap)
         
         let alltimeHigh = "$ " + (coinDetailModel.allTimeHigh.price?.formatCurrency() ?? "")
-//        let allTimeHighDescription = Date().asShortDateString()
         let alltimeHighStat = StatisticModel(title: "All time high", description: nil , value: alltimeHigh)
         
 

@@ -27,4 +27,16 @@ extension Date {
         return shortFormater.string(from: self)
     }
     
+    func generateDates(to endDate: Date, stepBy dayStep: Int) -> [Date] {
+        var dates: [Date] = []
+        var currentDate = self
+        
+        while currentDate <= endDate {
+            dates.append(currentDate)
+            currentDate = Calendar.current.date(byAdding: .day, value: dayStep, to: currentDate) ?? currentDate
+        }
+        
+        return dates
+    }
+    
 }

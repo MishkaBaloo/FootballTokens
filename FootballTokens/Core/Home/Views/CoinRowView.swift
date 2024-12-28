@@ -21,17 +21,17 @@ struct CoinRowView: View {
                     Text(coin.name)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundStyle(Color.textColor.primary)
-                        .font(.system(size: 16, weight: .bold))
-                        .frame(width: 175, height: 40)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
+                        .setFont(.nunitoSansBold, size: 16)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(spacing: 0) {
                     Text(coin.price?.asMoneySignString() ?? "")
                         .foregroundStyle(Color.textColor.primary)
-                        .font(.system(size: 16, weight: .bold))
+                        .setFont(.nunitoSansBold, size: 16)
                         .padding(.leading)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
                     
                     HStack(spacing: 0) {
                         Text(coin.change ?? "--")
@@ -39,13 +39,14 @@ struct CoinRowView: View {
                                              Color.supportColor.error : Color.supportColor.success)
                         Image(((coin.change?.contains("-") ?? true) ? .property1TrendDown : .property1TrandUp))
                     }
-                    .font(.system(size: 14, weight: .light))
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .setFont(.nunitoSansRegular, size: 14)
+                    .padding(.leading)
                 }
+                
             }
             .padding(.horizontal)
+            .padding(.vertical, 10)
             .frame(maxWidth: .infinity)
-            .frame(height: 60)
             .background(Color.layersColor.layerTwo)
             .clipShape(.rect(cornerRadius: 15))
         }

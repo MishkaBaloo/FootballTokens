@@ -25,12 +25,16 @@
 		CE5D8F912CEBA6E800BAE16B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D8F902CEBA6E800BAE16B /* Favorite.swift */; };
 		CE610F602D022C0500AA333C /* CustomPickerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE610F5F2D022C0500AA333C /* CustomPickerCalculator.swift */; };
 		CE610F622D023FDA00AA333C /* CustomPickerCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE610F612D023FDA00AA333C /* CustomPickerCurrency.swift */; };
+		CE673E122D0AEE2E00385122 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE673E112D0AEE2E00385122 /* AppFont.swift */; };
+		CE673E142D0AEE4C00385122 /* AdaptiveLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE673E132D0AEE4C00385122 /* AdaptiveLayout.swift */; };
+		CE673E162D0AF8FB00385122 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE673E152D0AF8FB00385122 /* NunitoSans-Bold.ttf */; };
 		CE76E7602D036394005CD752 /* FirstLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76E75F2D036394005CD752 /* FirstLaunchView.swift */; };
 		CE91A91A2CFA1E29006043CB /* DetailPerformingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A9192CFA1E29006043CB /* DetailPerformingView.swift */; };
 		CE91A91C2CFA3DBE006043CB /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91A91B2CFA3DBE006043CB /* DetailChartView.swift */; };
 		CE9BE7082D00D66800B6A314 /* CalculatorCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE7072D00D66800B6A314 /* CalculatorCurrency.swift */; };
 		CE9DCBDA2D04B0CA00761C3B /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DCBD92D04B0CA00761C3B /* SettingRowView.swift */; };
 		CE9DCBDC2D04B55800761C3B /* CalculatorButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DCBDB2D04B55800761C3B /* CalculatorButtons.swift */; };
+		CEB816622D0CAB630072C037 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEB816612D0CAB630072C037 /* NunitoSans-Regular.ttf */; };
 		CEB9FD812CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEB9FD7F2CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodeld */; };
 		CEB9FD832CFF7D8100ACC0CD /* FavoritesDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */; };
 		CEBC757F2CECC50A003915FC /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBC757E2CECC50A003915FC /* CoinModel.swift */; };
@@ -50,7 +54,6 @@
 		CECC8E762CF0DF8F00CF5F1A /* BestPerformingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E752CF0DF8F00CF5F1A /* BestPerformingView.swift */; };
 		CECC8E782CF1028400CF5F1A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E772CF1028400CF5F1A /* Double.swift */; };
 		CECC8E7A2CF10D9800CF5F1A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E792CF10D9800CF5F1A /* Date.swift */; };
-		CECC8E7C2CF111BE00CF5F1A /* CustomChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC8E7B2CF111BE00CF5F1A /* CustomChartView.swift */; };
 		CEDE89F12CF517FC00C6BD2B /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDE89F02CF517FC00C6BD2B /* Secrets.plist */; };
 		CEDE89F32CF5197500C6BD2B /* APIKeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE89F22CF5197500C6BD2B /* APIKeyProvider.swift */; };
 		CEF6C1142CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6C1132CEFA1FC009EBA9C /* CustomPickerByTimePeriod.swift */; };
@@ -77,12 +80,17 @@
 		CE5D8F902CEBA6E800BAE16B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		CE610F5F2D022C0500AA333C /* CustomPickerCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerCalculator.swift; sourceTree = "<group>"; };
 		CE610F612D023FDA00AA333C /* CustomPickerCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerCurrency.swift; sourceTree = "<group>"; };
+		CE673E102D0AED8900385122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE673E112D0AEE2E00385122 /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		CE673E132D0AEE4C00385122 /* AdaptiveLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveLayout.swift; sourceTree = "<group>"; };
+		CE673E152D0AF8FB00385122 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		CE76E75F2D036394005CD752 /* FirstLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchView.swift; sourceTree = "<group>"; };
 		CE91A9192CFA1E29006043CB /* DetailPerformingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPerformingView.swift; sourceTree = "<group>"; };
 		CE91A91B2CFA3DBE006043CB /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
 		CE9BE7072D00D66800B6A314 /* CalculatorCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCurrency.swift; sourceTree = "<group>"; };
 		CE9DCBD92D04B0CA00761C3B /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
 		CE9DCBDB2D04B55800761C3B /* CalculatorButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtons.swift; sourceTree = "<group>"; };
+		CEB816612D0CAB630072C037 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		CEB9FD802CFF7CB700ACC0CD /* FavoritesContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesContainer.xcdatamodel; sourceTree = "<group>"; };
 		CEB9FD822CFF7D8100ACC0CD /* FavoritesDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataService.swift; sourceTree = "<group>"; };
 		CEBC757E2CECC50A003915FC /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
@@ -102,7 +110,6 @@
 		CECC8E752CF0DF8F00CF5F1A /* BestPerformingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPerformingView.swift; sourceTree = "<group>"; };
 		CECC8E772CF1028400CF5F1A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		CECC8E792CF10D9800CF5F1A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		CECC8E7B2CF111BE00CF5F1A /* CustomChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChartView.swift; sourceTree = "<group>"; };
 		CEDE89EF2CF5173F00C6BD2B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CEDE89F02CF517FC00C6BD2B /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		CEDE89F22CF5197500C6BD2B /* APIKeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyProvider.swift; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 		CE5D8F652CEB6D0500BAE16B /* FootballTokens */ = {
 			isa = PBXGroup;
 			children = (
+				CE673E102D0AED8900385122 /* Info.plist */,
 				CE5D8F662CEB6D0500BAE16B /* FootballTokensApp.swift */,
 				CE5D8F682CEB6D0500BAE16B /* ContentView.swift */,
 				CE5D8F7A2CEB988B00BAE16B /* Helpers */,
@@ -175,6 +183,7 @@
 		CE5D8F772CEB986500BAE16B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CE673E0D2D0AED4B00385122 /* Fonts */,
 				CE5D8F832CEB99F400BAE16B /* Detail */,
 				CE5D8F822CEB99EA00BAE16B /* Setting */,
 				CE5D8F812CEB99DA00BAE16B /* Calculator */,
@@ -210,6 +219,7 @@
 		CE5D8F7A2CEB988B00BAE16B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CE673E132D0AEE4C00385122 /* AdaptiveLayout.swift */,
 				CEBC75802CECC921003915FC /* NetworkingManager.swift */,
 				CEBC758A2CECD6CC003915FC /* String.swift */,
 				CECC8E772CF1028400CF5F1A /* Double.swift */,
@@ -222,18 +232,10 @@
 		CE5D8F7B2CEB990E00BAE16B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE5D8F7C2CEB991D00BAE16B /* Font */,
 				CE5D8F6A2CEB6D0600BAE16B /* Assets.xcassets */,
 				CEC955962CEBC03F003B6C09 /* AppConfig.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		CE5D8F7C2CEB991D00BAE16B /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		CE5D8F7D2CEB992D00BAE16B /* Components */ = {
@@ -306,7 +308,6 @@
 				CEBC75842CECD094003915FC /* CoinRowView.swift */,
 				CECC8E752CF0DF8F00CF5F1A /* BestPerformingView.swift */,
 				CE0C745E2CEE42FA003DC82F /* CoinImageView.swift */,
-				CECC8E7B2CF111BE00CF5F1A /* CustomChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +375,16 @@
 				CE9DCBDB2D04B55800761C3B /* CalculatorButtons.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE673E0D2D0AED4B00385122 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CEB816612D0CAB630072C037 /* NunitoSans-Regular.ttf */,
+				CE673E152D0AF8FB00385122 /* NunitoSans-Bold.ttf */,
+				CE673E112D0AEE2E00385122 /* AppFont.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CE797EDF2CEE84760063A409 /* CustomPicker */ = {
@@ -445,7 +456,9 @@
 			files = (
 				CE5D8F6E2CEB6D0600BAE16B /* Preview Assets.xcassets in Resources */,
 				CEDE89F12CF517FC00C6BD2B /* Secrets.plist in Resources */,
+				CEB816622D0CAB630072C037 /* NunitoSans-Regular.ttf in Resources */,
 				CE5D8F6B2CEB6D0600BAE16B /* Assets.xcassets in Resources */,
+				CE673E162D0AF8FB00385122 /* NunitoSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +471,7 @@
 			files = (
 				CEBC75852CECD094003915FC /* CoinRowView.swift in Sources */,
 				CE0FEB392CF7A29C0007B231 /* StatisticModel.swift in Sources */,
+				CE673E122D0AEE2E00385122 /* AppFont.swift in Sources */,
 				CEC955972CEBC03F003B6C09 /* AppConfig.swift in Sources */,
 				CECBA4482CF7DFD000314B18 /* DetailView.swift in Sources */,
 				CEBC758B2CECD6CC003915FC /* String.swift in Sources */,
@@ -481,6 +495,7 @@
 				CE0FEB372CF797DC0007B231 /* DetailViewModel.swift in Sources */,
 				CEC955992CEBCC4F003B6C09 /* Calculator.swift in Sources */,
 				CE5D8F692CEB6D0500BAE16B /* ContentView.swift in Sources */,
+				CE673E142D0AEE4C00385122 /* AdaptiveLayout.swift in Sources */,
 				CEC955A32CEBE46B003B6C09 /* TabBarItemPreferenceKey.swift in Sources */,
 				CEBC75832CECCE23003915FC /* CoinDataService.swift in Sources */,
 				CE0FEB3B2CF7B03B0007B231 /* StatisticView.swift in Sources */,
@@ -495,7 +510,6 @@
 				CECC8E7A2CF10D9800CF5F1A /* Date.swift in Sources */,
 				CEC955912CEBB23B003B6C09 /* Settings.swift in Sources */,
 				CE76E7602D036394005CD752 /* FirstLaunchView.swift in Sources */,
-				CECC8E7C2CF111BE00CF5F1A /* CustomChartView.swift in Sources */,
 				CE9DCBDC2D04B55800761C3B /* CalculatorButtons.swift in Sources */,
 				CE5D8F672CEB6D0500BAE16B /* FootballTokensApp.swift in Sources */,
 				CEC9559D2CEBD162003B6C09 /* TabBarViewModel.swift in Sources */,
@@ -637,6 +651,7 @@
 				DEVELOPMENT_TEAM = 56S6D7P45J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FootballTokens/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Football Tokens";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -671,6 +686,7 @@
 				DEVELOPMENT_TEAM = 56S6D7P45J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FootballTokens/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Football Tokens";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

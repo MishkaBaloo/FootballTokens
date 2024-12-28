@@ -16,11 +16,11 @@ struct StatisticView: View {
         HStack(spacing: 0) {
             VStack {
                 Text(stat.title)
-                    .font(.system(size: 14, weight: .medium))
+                    .setFont(.nunitoSansRegular, size: 14)
                     .foregroundStyle(Color.textColor.primary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(stat.description ?? "")
-                    .font(.system(size: 12, weight: .light))
+                    .setFont(.nunitoSansRegular, size: 12)
                     .foregroundStyle(Color.textColor.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -29,9 +29,9 @@ struct StatisticView: View {
             
             VStack {
                 Text(stat.value)
-                    .font(.system(size: 16, weight: .bold))
+                    .setFont(.nunitoSansBold, size: 16)
                     .foregroundStyle(Color.textColor.primary)
-                    .frame(maxWidth: 140, maxHeight: 70, alignment: .topTrailing)
+                    .frame(maxWidth: 160, maxHeight: 70, alignment: .topTrailing)
                 
             }
         }

@@ -23,7 +23,7 @@ class CoinDetailDataService {
      func getCoinsDetails() {
          guard let url = URL(string: "https://api.coinranking.com/v2/coin/\(coin.id)"),
                !coin.id.isEmpty else {
-             print("Invalid coin ID")
+             print("Invalid coin ID: \(coin.id)")
              return
          }
         

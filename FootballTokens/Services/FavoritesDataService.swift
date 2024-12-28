@@ -14,9 +14,11 @@ class FavoritesDataService {
     private let containerName: String = "FavoritesContainer"
     private let entityName: String = "FavoritesEntity"
     
+    static let instance: FavoritesDataService = FavoritesDataService()
+    
     @Published var savedEntities: [FavoritesEntity] = []
     
-    init() {
+    private init() {
         container  = NSPersistentContainer(name: containerName)
         container.loadPersistentStores { _, error in
             if let error = error {

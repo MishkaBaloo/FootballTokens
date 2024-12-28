@@ -25,7 +25,7 @@ struct SettingRowView: View {
                         image
                         Text(title)
                             .foregroundStyle(Color.textColor.primary)
-                            .font(.system(size: 16, weight: .heavy))
+                            .setFont(.nunitoSansBold, size: 16)
                         Spacer()
                         SquareButton(image: Image(.arrowRight), action: action)
                     }

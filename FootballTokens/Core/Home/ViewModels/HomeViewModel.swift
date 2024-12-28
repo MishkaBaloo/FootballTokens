@@ -14,9 +14,11 @@ class HomeViewModel: ObservableObject {
     @Published var favoriteCoins: [CoinModel] = []
     @Published var bestPerformingCoin: CoinModel?
     
+    @Published var chartData: [Double] = []
+    
     private let coinDataService = CoinDataService()
     private var cancellables = Set<AnyCancellable>()
-    private let favoriteDataService = FavoritesDataService()
+    private let favoriteDataService = FavoritesDataService.instance
     
     init() {
         addSbscribers()
@@ -32,11 +34,9 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
-        $allCoins
-            .combineLatest(favoriteDataService.$savedEntities)
-            .map(mapAllCoinsToFavoriteCoins)
+        favoriteDataService.$savedEntities
             .sink { [weak self] returnedFavoriteCoins in
-                self?.favoriteCoins = returnedFavoriteCoins
+                self?.favoriteCoins = self?.mapAllCoinsToFavoriteCoins(allCoins: self?.allCoins ?? [], entity: returnedFavoriteCoins) ?? []
             }
             .store(in: &cancellables)
     }
@@ -52,18 +52,21 @@ class HomeViewModel: ObservableObject {
     }
     
     private func updateBestPerformingCoin() {
-        bestPerformingCoin = allCoins
-            .filter { $0.change != nil }
+        if let bestCoin = allCoins
+            .filter({ $0.change != nil })
             .max(by: {
                 guard let change1 = Double($0.change ?? ""),
                       let change2 = Double($1.change ?? "")
                 else { return false }
                 return change1 < change2
-            })
+            }) {
+            bestPerformingCoin = bestCoin
+            chartData = bestCoin.sparkline.compactMap { Double($0 ?? "") }
+        }
     }
     
     func updateCoins(for timePeriod: TimePeriods) {
-        coinDataService.getCoins(for: timePeriod) { [weak self] coins in
+        coinDataService.getCoins(for: timePeriod) { [weak self] (coins: [CoinModel]) in
             DispatchQueue.main.async {
                 self?.allCoins = coins
                 self?.updateBestPerformingCoin()

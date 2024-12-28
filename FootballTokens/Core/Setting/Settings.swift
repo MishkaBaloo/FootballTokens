@@ -13,7 +13,7 @@ struct Settings: View {
     @EnvironmentObject var tabBarViewModel: TabBarViewModel
     @State private var showAlert: Bool = false
     
-    private let favoriteDataService = FavoritesDataService()
+    private let favoriteDataService = FavoritesDataService.instance
 
     
     var body: some View {
@@ -27,8 +27,7 @@ struct Settings: View {
                 // header
                 Text("Settings")
                     .foregroundStyle(Color.textColor.primary)
-                    .font(.headline)
-                    .fontWeight(.heavy)
+                    .setFont(.nunitoSansBold, size: 16)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top)
                     .padding(.horizontal)
@@ -36,7 +35,7 @@ struct Settings: View {
                 VStack {
                     Text("Abbout app")
                         .foregroundStyle(Color.textColor.secondary)
-                        .font(.system(size: 16, weight: .light))
+                        .setFont(.nunitoSansRegular, size: 14)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     privacyPolicy
@@ -44,7 +43,7 @@ struct Settings: View {
                     // feedback
                     Text("Feedback")
                         .foregroundStyle(Color.textColor.secondary)
-                        .font(.system(size: 16, weight: .light))
+                        .setFont(.nunitoSansRegular, size: 14)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     share
@@ -115,7 +114,7 @@ extension Settings {
                 .foregroundStyle(Color.layersColor.layerTwo)
                 .overlay {
                     Text("Clear Data")
-                        .font(.system(size: 16, weight: .bold))
+                        .setFont(.nunitoSansBold, size: 16)
                         .foregroundStyle(Color.supportColor.error)
                 }
         })

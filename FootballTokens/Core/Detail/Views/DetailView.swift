@@ -30,7 +30,7 @@ struct DetailView: View {
     @State private var selectedCoin: CoinModel? = nil
     @State private var isSaved: Bool = false
     
-    private let favoriteDataService = FavoritesDataService()
+    private let favoriteDataService = FavoritesDataService.instance
     
     
     init(coin: CoinModel) {
@@ -51,9 +51,7 @@ struct DetailView: View {
                 chart
                 ScrollView {
                     stat
-                        .onChange(of: selectionTime, { oldValue, newValue in
-                            vm.updateCoins(for: newValue)
-                        })
+                        
                 }
                 .scrollIndicators(.hidden)
                 .ignoresSafeArea(.all)
@@ -67,6 +65,9 @@ struct DetailView: View {
             vm.updateCoins(for: selectionTime)
             isSaved = favoriteDataService.isFavorite(coinID: vm.coin.id)
         }
+        .onChange(of: selectionTime, { oldValue, newValue in
+            vm.updateCoins(for: newValue)
+        })
     }
 }
 
@@ -105,7 +106,7 @@ extension DetailView {
     private var sorting: some View {
         HStack {
             Text(Date().asShortDateString())
-                .font(.system(size: 14, weight: .bold))
+                .setFont(.nunitoSansRegular, size: 14)
             Spacer()
             CustomPickerByTimePeriod(defaultSelection: .day, selection: $selectionTime)
         }
@@ -123,7 +124,7 @@ extension DetailView {
     private var stat: some View {
         VStack {
             Text("Supply information")
-                .font(.system(size: 20, weight: .bold))
+                .setFont(.nunitoSansBold, size: 20)
                 .foregroundStyle(Color.textColor.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
@@ -148,7 +149,7 @@ extension DetailView {
             Spacer()
             
             Text("Value statistics")
-                .font(.system(size: 20, weight: .bold))
+                .setFont(.nunitoSansBold, size: 20)
                 .foregroundStyle(Color.textColor.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
@@ -192,7 +193,7 @@ extension DetailView {
                             .foregroundStyle(Color.accentsColor.accent)
                             .overlay {
                                 Text("Go to website")
-                                    .font(.system(size: 16, weight: .bold))
+                                    .setFont(.nunitoSansBold, size: 16)
                                     .foregroundStyle(Color.textColor.primary)
                             }
                     })

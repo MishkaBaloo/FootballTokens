@@ -54,5 +54,10 @@ extension String {
         formatter.locale = Locale(identifier: "en_US")
         return formatter.string(from: NSNumber(value: value)) ?? "0.0"
     }
+    
+    func toDoubleArray() -> [Double] {
+        self.split(separator: ",")
+            .compactMap { Double($0.trimmingCharacters(in: .whitespaces)) }
+    }
 }
 

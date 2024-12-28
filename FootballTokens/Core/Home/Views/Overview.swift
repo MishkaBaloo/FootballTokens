@@ -10,6 +10,7 @@ import SwiftUI
 struct Overview: View {
     
     @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var detailVM: HomeViewModel
     
     @State private var showFavoriteView: Bool = false
     
@@ -34,6 +35,9 @@ struct Overview: View {
                 }
                 .padding(.top)
             }
+            .onAppear {
+                vm.updateCoins(for: selectionTime)
+            }
             .onChange(of: selectionFilter, { oldValue, newValue in
                 vm.sortCoins(sort: newValue, coins: &vm.allCoins)
             })
@@ -54,6 +58,7 @@ struct Overview: View {
     Overview()
         .preferredColorScheme(.dark)
         .environmentObject(HomeViewModel())
+        .environmentObject(DetailViewModel(coin: CoinModel.mok))
 }
 
 // MARK: Extensions
@@ -69,8 +74,7 @@ extension Overview {
         HStack {
             Text("Best performing")
                 .foregroundStyle(Color.textColor.primary)
-                .font(.headline)
-                .fontWeight(.heavy)
+                .setFont(.nunitoSansBold, size: 16)
             
             Spacer()
             
@@ -91,11 +95,8 @@ extension Overview {
                     .onTapGesture {
                         segue(coin: coin)
                     }
-                
-                if let chart = vm.bestPerformingCoin {
-                    CustomChartView(coin: chart)
+                    DetailChartView( data: $vm.chartData, timePeriod: selectionTime)
                         .padding(.top, 4)
-                }
             }
         }
     }
@@ -104,7 +105,7 @@ extension Overview {
         HStack {
             Text("Overview for")
                 .foregroundStyle(Color.textColor.primary)
-                .font(.system(size: 20, weight: .bold))
+                .setFont(.nunitoSansBold, size: 20)
             
             CustomPickerByTimePeriod(defaultSelection: .day, selection: $selectionTime)
             Spacer()

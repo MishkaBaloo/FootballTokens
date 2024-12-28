@@ -15,7 +15,7 @@ struct Favorite: View {
     @State private var showDetailView: Bool = false
     @State private var selectedCoin: CoinModel? = nil
     
-    private let favoriteDataService = FavoritesDataService()
+    private let favoriteDataService = FavoritesDataService.instance
     
     var body: some View {
         NavigationStack {
@@ -72,16 +72,14 @@ extension Favorite {
             
             Text("Favorite")
                 .foregroundStyle(Color.textColor.primary)
-                .font(.headline)
-                .fontWeight(.heavy)
+                .setFont(.nunitoSansBold, size: 16)
             
             Spacer()
             
             ZStack {
                 RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                     .frame(width: 50, height: 50)
-                    .foregroundStyle(Color.backgroundColor.background)
-                
+                    .opacity(0.0)
             }
         }
         .padding(.horizontal)
@@ -102,7 +100,7 @@ extension Favorite {
     private var notSavedTokensText: some View {
         HStack {
             Text("No favorites Fan Tokens yet...")
-                .font(.system(size: 14, weight: .bold))
+                .setFont(.nunitoSansRegular, size: 14)
                 .foregroundStyle(Color.textColor.secondary)
         }
         .padding(.top, 100)

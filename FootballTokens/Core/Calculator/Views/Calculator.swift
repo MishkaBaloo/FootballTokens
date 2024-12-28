@@ -63,8 +63,7 @@ extension Calculator {
     private var header: some View {
         Text("Calculator")
             .foregroundStyle(Color.textColor.primary)
-            .font(.headline)
-            .fontWeight(.heavy)
+            .setFont(.nunitoSansBold, size: 16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top)
             .padding(.horizontal)
@@ -74,13 +73,13 @@ extension Calculator {
         HStack {
             VStack {
                 Text("From")
-                    .font(.system(size: 14, weight: .light))
+                    .setFont(.nunitoSansRegular, size: 14)
                     .foregroundStyle(Color.textColor.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Text(fromValue)
                     .foregroundStyle(Color.textColor.primary)
-                    .font(.system(size: 30, weight: .bold))
+                    .setFont(.nunitoSansBold, size: 30)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
@@ -118,13 +117,13 @@ extension Calculator {
         HStack {
             VStack {
                 Text("To")
-                    .font(.system(size: 14, weight: .light))
+                    .setFont(.nunitoSansRegular, size: 14)
                     .foregroundStyle(Color.textColor.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Text(toValue)
                     .foregroundStyle(Color.textColor.primary)
-                    .font(.system(size: 30, weight: .bold))
+                    .setFont(.nunitoSansBold, size: 30)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             
@@ -165,7 +164,7 @@ extension Calculator {
                         if let title = button.title {
                             Text(title)
                                 .foregroundColor(button.colorText)
-                                .font(.system(size: 30, weight: .bold))
+                                .setFont(.nunitoSansBold, size: 30)
                         } else if let image = button.Image {
                             image
                                 .resizable()
@@ -178,7 +177,6 @@ extension Calculator {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top)
     }
     
     private func calculatorBattonPress(_ button: CalculatorButton) {
